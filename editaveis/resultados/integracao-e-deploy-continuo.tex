@@ -1,0 +1,58 @@
+Há três tipos de ambientes no desenvolvimento desta aplicação: \textit{development}, \textit{staging} e \textit{production}. O ambiente de
+\textit{development} ou desenvolvimento, é o ambiente local de cada desenvolvedor, \textit{staging} ou pré produção
+é um ambiente para serem realizados testes beta e \textit{production} ou produção é o ambiente final onde a aplicação será de fato
+utilizada pelos usuários.
+
+Na API a integração contínua é feita com a ferramenta TavisCI. Onde, se um \textit{pull request} é aceito na \textit{branch} \textit{staging},
+o Travis executa toda a suíte de testes para ver se algum deles pode ter resultado em falha, caso todos passem, ele verifica se todas as métricas
+definidas pelo Rubocop estão de acordo com o padrão definido. Caso todas as métricas passem, a build de pré produção é criada, o Travis envia as informações de cobertura
+de testes para o Coveralls, as informações de métricas para o Code Climate e logo em seguida realiza o \textit{deploy} no ambiente de pré produção no Heroku.
+Caso um \textit{pull request} seja aceito na \textit{branch} \textit{master} todo o processo será o mesmo, com exceção que o \textit{deploy} irá ocorrer no ambiente de produção no Heroku.
+A figura abaxio ilustra o processo de integração e deploy contínuo feito na API.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/api_ci.png}
+    \caption[Integração e deploy contínuo API]{Integração e deploy contínuo API.}
+    \label{img:integracao_deploy_continuo_api}
+\end{figure}
+
+No aplicativo, foi planejada a integração e o deploy contínuo para ocorrer da seguinte forma:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/ci_should_be.png}
+    \caption[Integração e deploy contínuo planejado para o APP]{Integração e deploy contínuo planejado para o APP}
+    \label{img:integracao_deploy_continuo_planejado_app}
+\end{figure}
+
+Se um pull request \textit{pull request} é aceito na \textit{branch} \textit{master}, o Travis irá realizar toda a suíte de testes, caso todos passem enviará as informações de cobertura para o
+Codecov e através do Fastlane realizará o deploy do aplicativo tanto na Play Store quanto na App Store. E caso um \textit{pull request} é aceito na \textit{branch} \textit{staging}, todo o processo é repetido, com exceção
+que não é realizado o deploy do aplicativo nas lojas e sim no Crashlytics, que irá criar a versão beta do aplicativo e enviará por email para os emails configurados previamente.
+
+Uma vez que o aplicativo ainda não chegou ao estágio de deploy nas lojas, o planejamento para a primeira entrega é só até o deploy beta, como mostrado na figura abaixo:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/ci_as_is.png}
+    \caption[Integração e deploy contínuo planejado para o APP]{Integração e deploy contínuo planejado para a primeira entrega}
+    \label{img:integracao_deploy_continuo_planejado_primeira_entrega}
+\end{figure}
+
+Porém não foi possível fazer com que o deploy contínuo aconteça logo após a integração contínua, um desafio causado por escolher desenvolvimento híbridos de aplicativo.
+Uma vez que o código versionado do aplicativo é o mesmo código para a plataforma Android e iOS, e após realizar a build desse código é gerado códigos em cada plataforma (não versionados),
+a ferramenta de integração contínua não consegue ter acesso aos códigos de cada plataforma para realizar os devidos deploys. Sendo assim, o deploy contínuo está acontecendo manualmente
+por enquanto que nenhuma solução ainda foi encontrada, através do comando:
+
+\begin{lstlisting}[language=bash]
+  $ fastlane beta
+\end{lstlisting}
+
+Sendo assim, a figura abaixo ilustra como está funcionando a integração e o deploy contínuo do aplicativo até o presente momento.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/ci_currently.png}
+    \caption[Integração e deploy contínuo atual]{Integração e deploy contínuo atual}
+    \label{img:integracao_deploy_continuo_atual}
+\end{figure}
