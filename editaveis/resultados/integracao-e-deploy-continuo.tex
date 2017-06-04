@@ -1,14 +1,10 @@
-Há três tipos de ambientes no desenvolvimento desta aplicação: \textit{development}, \textit{staging} e \textit{production}. O ambiente de
-\textit{development} ou desenvolvimento, é o ambiente local de cada desenvolvedor, \textit{staging} ou pré produção
-é um ambiente para serem realizados testes beta e \textit{production} ou produção é o ambiente final onde a aplicação será de fato
-utilizada pelos usuários.
+Há três tipos de ambientes no desenvolvimento desta aplicação: \textit{development}, \textit{staging} e \textit{production}. O ambiente de \textit{development} ou desenvolvimento, é o ambiente local de cada desenvolvedor, \textit{staging} ou pré produção é um ambiente para serem realizados testes beta e \textit{production} ou produção é o ambiente final onde a aplicação será de fato utilizada pelos usuários.
 
-Na API a integração contínua é feita com a ferramenta TavisCI. Onde, se um \textit{pull request} é aceito na \textit{branch} \textit{staging},
-o Travis executa toda a suíte de testes para ver se algum deles pode ter resultado em falha, caso todos passem, ele verifica se todas as métricas
-definidas pelo Rubocop estão de acordo com o padrão definido. Caso todas as métricas passem, a build de pré produção é criada, o Travis envia as informações de cobertura
-de testes para o Coveralls, as informações de métricas para o Code Climate e logo em seguida realiza o \textit{deploy} no ambiente de pré produção no Heroku.
+Na API a integração contínua é feita com a ferramenta TravisCI. Onde, se um \textit{pull request} é aceito na \textit{branch} \textit{staging}, o Travis executa toda a suíte de testes para ver se algum deles pode ter resultado em falha, caso todos passem, ele verifica se todas as métricas definidas pelo Rubocop estão de acordo com o padrão definido. Caso todas as métricas passem, a build de pré produção é criada, o Travis envia as informações de cobertura de testes para o Coveralls, as informações de métricas para o Code Climate e logo em seguida realiza o \textit{deploy} no ambiente de pré produção no Heroku.
+
 Caso um \textit{pull request} seja aceito na \textit{branch} \textit{master} todo o processo será o mesmo, com exceção que o \textit{deploy} irá ocorrer no ambiente de produção no Heroku.
-A figura abaxio ilustra o processo de integração e deploy contínuo feito na API.
+
+A figura \ref{img:integracao_deploy_continuo_api} ilustra o processo de integração e deploy contínuo feito na API.
 
 \begin{figure}[H]
     \centering
@@ -30,7 +26,7 @@ Se um pull request \textit{pull request} é aceito na \textit{branch} \textit{ma
 Codecov e através do Fastlane realizará o deploy do aplicativo tanto na Play Store quanto na App Store. E caso um \textit{pull request} é aceito na \textit{branch} \textit{staging}, todo o processo é repetido, com exceção
 que não é realizado o deploy do aplicativo nas lojas e sim no Crashlytics, que irá criar a versão beta do aplicativo e enviará por email para os emails configurados previamente.
 
-Uma vez que o aplicativo ainda não chegou ao estágio de deploy nas lojas, o planejamento para a primeira entrega é só até o deploy beta, como mostrado na figura abaixo:
+Uma vez que o aplicativo ainda não chegou ao estágio de deploy nas lojas, o planejamento para a primeira entrega é só até o deploy beta, como mostrado na figura \ref{img:integracao_deploy_continuo_planejado_primeira_entrega}:
 
 \begin{figure}[H]
     \centering
@@ -48,7 +44,7 @@ por enquanto que nenhuma solução ainda foi encontrada, através do comando:
   $ fastlane beta
 \end{lstlisting}
 
-Sendo assim, a figura abaixo ilustra como está funcionando a integração e o deploy contínuo do aplicativo até o presente momento.
+Sendo assim, a figura \ref{img:integracao_deploy_continuo_atual} ilustra como está funcionando a integração e o deploy contínuo do aplicativo até o presente momento.
 
 \begin{figure}[H]
     \centering
