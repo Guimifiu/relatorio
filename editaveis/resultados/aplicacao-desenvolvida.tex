@@ -11,27 +11,13 @@ No Anexo \ref{chap:telas} encontram-se algumas telas da aplicação desenvolvida
 
 Foram feitos testes de integração e unitários para garantir o funcionamento dos métodos do código-fonte e da integração da aplicação mobile com a API.
 
-Para a aplicação mobile, foram utilizados os \textit{frameworks open source} Jasmine para escrever os testes e o Karma para rodar a suíte. O Karma é um ambiente de teste para Javascript onde os desenvolvedores conseguem \textit{feedbacks} rápidos do código que estão desenvolvendo \cite{karma}. O Jasmine é um \textit{framework} que utiliza conceitos de \textit{behavior-driven development} para escrever testes \cite{jasmine}. O CodeCov foi utilizado para adquirir a cobertura de código dos testes.
-
-Para a API, foi utilizado o RSpec, que é uma ferramenta para escrever e executar a suíte de testes \cite{rspec} e o Coveralls que adquire a cobertura de código dos testes \cite{coveralls}.
+No Anexo \ref{chap:testes} foi feito um tutorial de como realizar os testes unitários e funcionais no Ionic com um exemplo de um dos testes criados.
 
 \subsection{Métricas de Código-fonte}
 
-Para as métricas de código-fonte da aplicação mobile, foi utilizado o TSLint, que checa código TypeScript em questões de manutenabilidade, leitura e erros funcionais \cite{tslint}.
-
-No código-fonte da API, foi utilizado o CodeClimate, uma ferramenta que baixa o código do Github e checa em seus servidores a complexidade do código, duplicação, estilo e segurança \cite{codeclimate}. O CodeClimate utiliza as seguintes para gerar o relatório final:
-\begin{itemize}
-    \item \textbf{Reek}, para verificação de \textit{code smells}, que são sintomas no código-fonte que podem gerar problemas;
-    \item \textbf{Flog}, para a verificação da complexidade do código Ruby;
-    \item \textbf{Rubocop}, que verifica estilo e qualidade do código;
-    \item \textbf{Brakeman}, para uma verificação estática de segurança do código;
-\end{itemize}
-
-Além disso, é também uma ferramenta própria do CodeClimate para checar duplicações de código.
-
-Adicionalmente, é feita na integração contínua um relatório de métricas pelo Rubocop que impede que a \textit{build} passe caso a complexidade seja maior do que 6, que é o padrão de complexidade ciclomática máxima aceitável. Além de complexidade, o Rubocop possui diversas outras ferramentas embutidas que verificam outros aspectos baseados no guia de estilo do Ruby mantido pela comunidade \cite{rubocop}. Os padrões mínimos ou máximos dessas outras ferramentas serão analisadas com o desenvolvimento do projeto.
+Como dito no \autoref{chap:met}, foram utilizadas as ferramentas CodeClimate e Rubocop. Além de medir a complexidade no Rubocop, é feita na integração contínua um relatório de métricas pela ferramenta que impede que a \textit{build} passe caso a complexidade seja maior do que 6, que é o padrão de complexidade ciclomática máxima aceitável.
 
 No Anexo \ref{chap:metricas} é possível encontrar os resultados da coleta de métricas do sistema.
 
-\subsection{Integração e Deploy contínuo}
+\subsection{Integração e Entrega Contínua}
 \input{editaveis/resultados/integracao-e-deploy-continuo}
