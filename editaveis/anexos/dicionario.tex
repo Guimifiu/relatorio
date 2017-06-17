@@ -1,2 +1,86 @@
 \chapter{Dicionário de Dados}
 \label{chap:dicionario}
+
+\begin{table}[]
+\centering
+\caption{Dicionário de dados da entidade \textit{User}}
+\label{my-label}
+\begin{tabular}{llll}
+\multicolumn{4}{l}{\textbf{Entidade: User}}                                                                                          \\
+\rowcolor[HTML]{343434}
+{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição} \\
+Name                            & Texto                          & 45                             &                                  \\
+Surname                         & Texto                          & 45                             &                                  \\
+Email                           & Texto                          & 45                             &                                  \\
+Password                        & Texto                          & 45                             & Mínimo de 8 caracteres
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{Dicionário de dados da entidade \textit{Rating}}
+\label{my-label}
+\begin{tabular}{llll}
+\multicolumn{4}{l}{\textbf{Entidade: Rating}}                                                                                        \\
+\rowcolor[HTML]{343434}
+{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição} \\
+Stars                           & Númerico                       &                                & Pode ir de 0 a 5
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{Dicionário de dados da entidade \textit{GasStation}}
+\label{my-label}
+\begin{tabular}{llll}
+\multicolumn{4}{l}{\textbf{Entidade: GasStation}}                                                                                    \\
+\rowcolor[HTML]{343434}
+{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição} \\
+Latitude                        & Texto                          & 45                             & Pode ir de 0 a 5                 \\
+Longitude                       & Texto                          & 45                             &                                  \\
+Vicinity                        & Texto                          & 45                             &                                  \\
+Google Maps Id                  & Númerico                       &                                & Chave da api do Google Maps      \\
+Name                            & Texto                          & 45                             &
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{Dicionário de dados da entidade \textit{PriceSuggestion}}
+\label{my-label}
+\begin{tabular}{llll}
+\multicolumn{4}{l}{\textbf{Entidade: PriceSuggestion}}                                                                               \\
+\rowcolor[HTML]{343434}
+{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição} \\
+Type                            & Numérico                       &                                & Enum (gas, alcohol ou diesel)    \\
+Value                           & Numérico                       &                                & Valor do combustível
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{Dicionário de dados da entidade \textit{FuelSupply}}
+\label{my-label}
+\begin{tabular}{llll}
+\multicolumn{4}{l}{\textbf{Entidade: FuelSupply}}                                                                                                                                                                        \\
+\rowcolor[HTML]{343434}
+{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição}                                                                                     \\
+Date                            & Data                           &                                &                                                                                                                      \\
+Fueled                          & Boleano                        &                                & \begin{tabular}[c]{@{}l@{}}Define se o usuário abasteceu ou\\ não no posto em que parou\end{tabular}                 \\
+Boycotted                       & Boleano                        &                                & \begin{tabular}[c]{@{}l@{}}Define se o posto que o usuário parou\\ estava na lista de postos boicotados\end{tabular} \\
+Value                           & Numércio                       &                                & Valor de combustível abastecido
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{Dicionário de dados da entidade \textit{Boycott}}
+\label{my-label}
+\begin{tabular}{llll}
+\multicolumn{4}{l}{\textbf{Entidade: Boycott}}                                                                                         \\
+\rowcolor[HTML]{343434}
+{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição}   \\
+Start Date                      & Data                           &                                & Data de início da lista de boicote \\
+End Date                        & Data                           &                                & Data final da lista de boicote
+\end{tabular}
+\end{table}
