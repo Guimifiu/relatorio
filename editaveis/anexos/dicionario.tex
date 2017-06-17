@@ -4,27 +4,29 @@
 \begin{table}[]
 \centering
 \caption{Dicionário de dados da entidade \textit{User}}
-\label{my-label}
-\begin{tabular}{llll}
-\multicolumn{4}{l}{\textbf{Entidade: User}}                                                                                          \\
-\rowcolor[HTML]{343434}
-{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição} \\
-Name                            & Texto                          & 45                             &                                  \\
-Surname                         & Texto                          & 45                             &                                  \\
-Email                           & Texto                          & 45                             &                                  \\
-Password                        & Texto                          & 45                             & Mínimo de 8 caracteres
+\label{dic:user}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\
+\midrule
+Name                            & Texto                          & 45                             & Nome do usuário \\
+Surname                         & Texto                          & 45                             & Sobrenome do usuário\\
+Email                           & Texto                          & 45                             & Email do usuário\\
+Password                        & Texto                          & 45                             & Senha do usuário. Deve possuir um mínimo de 8 caracteres\\
+\bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[]
 \centering
 \caption{Dicionário de dados da entidade \textit{Rating}}
-\label{my-label}
-\begin{tabular}{llll}
-\multicolumn{4}{l}{\textbf{Entidade: Rating}}                                                                                        \\
-\rowcolor[HTML]{343434}
-{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição} \\
-Stars                           & Númerico                       &                                & Pode ir de 0 a 5
+\label{dic:rating}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\
+\midrule
+Stars                           & Númerico                       &1                               & Classificação de um posto de gasolina. Pode ir de 0 a 5\\
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -32,55 +34,59 @@ Stars                           & Númerico                       &             
 \centering
 \caption{Dicionário de dados da entidade \textit{GasStation}}
 \label{my-label}
-\begin{tabular}{llll}
-\multicolumn{4}{l}{\textbf{Entidade: GasStation}}                                                                                    \\
-\rowcolor[HTML]{343434}
-{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição} \\
-Latitude                        & Texto                          & 45                             & Pode ir de 0 a 5                 \\
-Longitude                       & Texto                          & 45                             &                                  \\
+\begin{tabular}{cccc}
+\toprule
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\
+\midrule
+Latitude                        & Texto                          & 45                             & Latitude do posto de combustível. Pode ir de 0 a 5                 \\
+Longitude                       & Texto                          & 45                             & Longitude do posto de combustível.\\
 Vicinity                        & Texto                          & 45                             &                                  \\
 Google Maps Id                  & Númerico                       &                                & Chave da api do Google Maps      \\
-Name                            & Texto                          & 45                             &
+Name                            & Texto                          & 45                             & Nome do posto de Gasolina\\
+\bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[]
 \centering
 \caption{Dicionário de dados da entidade \textit{PriceSuggestion}}
-\label{my-label}
-\begin{tabular}{llll}
-\multicolumn{4}{l}{\textbf{Entidade: PriceSuggestion}}                                                                               \\
-\rowcolor[HTML]{343434}
-{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição} \\
-Type                            & Numérico                       &                                & Enum (gas, alcohol ou diesel)    \\
-Value                           & Numérico                       &                                & Valor do combustível
+\label{dic:pricesuggestion}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\
+\midrule
+Type                            & Numérico                       &1                               & Define o tipo de combustível (Gasolina, Álcool ou Diesel)\\
+Value                           & Numérico                       &2,2                             & Valor do combustível\\
+\bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[]
 \centering
 \caption{Dicionário de dados da entidade \textit{FuelSupply}}
-\label{my-label}
-\begin{tabular}{llll}
-\multicolumn{4}{l}{\textbf{Entidade: FuelSupply}}                                                                                                                                                                        \\
-\rowcolor[HTML]{343434}
-{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição}                                                                                     \\
-Date                            & Data                           &                                &                                                                                                                      \\
-Fueled                          & Boleano                        &                                & \begin{tabular}[c]{@{}l@{}}Define se o usuário abasteceu ou\\ não no posto em que parou\end{tabular}                 \\
-Boycotted                       & Boleano                        &                                & \begin{tabular}[c]{@{}l@{}}Define se o posto que o usuário parou\\ estava na lista de postos boicotados\end{tabular} \\
-Value                           & Numércio                       &                                & Valor de combustível abastecido
+\label{dic:fuelsupply}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição}\\
+\midrule
+Date                            & Data                           &dd/mm/yy                        & Data que o usuário abasteceu no posto\\
+Fueled                          & Boleano                        &                                & \begin{tabular}[l]{@{}c@{}}Define se o usuário abasteceu ou não \\no posto em que parou\end{tabular}\\
+Boycotted                       & Boleano                        &                                & \begin{tabular}[l]{@{}c@{}}Define se o posto que o usuário parou\\ estava na lista de postos boicotados\end{tabular} \\
+Value                           & Numérico                       &2,2                             & Valor de combustível abastecido\\
+\bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[]
 \centering
 \caption{Dicionário de dados da entidade \textit{Boycott}}
-\label{my-label}
-\begin{tabular}{llll}
-\multicolumn{4}{l}{\textbf{Entidade: Boycott}}                                                                                         \\
-\rowcolor[HTML]{343434}
-{\color[HTML]{FFFFFF} Atributo} & {\color[HTML]{FFFFFF} Domínio} & {\color[HTML]{FFFFFF} Tamanho} & {\color[HTML]{FFFFFF} Descrição}   \\
-Start Date                      & Data                           &                                & Data de início da lista de boicote \\
-End Date                        & Data                           &                                & Data final da lista de boicote
+\label{dic:boycott}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição}   \\
+\midrule
+Start Date                      & Data                           &dd/mm/yy                         & Data de início da lista de boicote \\
+End Date                        & Data                           &dd/mm/yy                         & Data final da lista de boicote\\
+\bottomrule
 \end{tabular}
 \end{table}
