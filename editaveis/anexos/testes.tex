@@ -41,7 +41,7 @@ O código abaixo é um exemplo de teste unitário de um serviço simulando a com
 É criado um usuário fictício e quando o serviço é chamado para procurar um usuário pelo email, o usuário retornado tem que ter o nome e e sobrenome definido no \textit{mock}.
 
 \medskip
-\begin{lstlisting}[caption=Exemplo de teste unitário do serviço de usuários]
+\begin{lstlisting}
 import { TestBed, inject, async } from '@angular/core/testing';
 import { Http, HttpModule, BaseRequestOptions, Response, ResponseOptions } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
@@ -109,7 +109,7 @@ Ao pedir para a API retornar o usuário pelo email, o nome e o sobrenome tem que
 
 
 \medskip
-\begin{lstlisting}[caption=Exemplo de teste de integração do serviço de usuários]
+\begin{lstlisting}
 import {HttpModule} from '@angular/http';
 import {async, TestBed,getTestBed } from '@angular/core/testing';
 

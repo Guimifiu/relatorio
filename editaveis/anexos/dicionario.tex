@@ -25,9 +25,9 @@ A tabela \ref{dic:rating} mostra o dicionário de dados da entidade \textit{Rati
 \label{dic:rating}
 \begin{tabular}{cccc}
 \toprule
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Formato} & \textbf{Descrição} \\
 \midrule
-Stars                           & Númerico                       &1                               & Classificação de um posto de gasolina. Pode ir de 0 a 5\\
+Stars                           & Númerico                       & 1                              & Classificação de um posto de gasolina. Pode ir de 0 a 5\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -43,7 +43,7 @@ A tabela \ref{dic:gas_station} mostra o dicionário de dados da entidade \textit
 \midrule
 Latitude                        & Texto                          & 45                             & Latitude do posto de combustível. Pode ir de 0 a 5                 \\
 Longitude                       & Texto                          & 45                             & Longitude do posto de combustível\\
-Vicinity                        & Texto                          & 45                             & Endereço da visinhança onde o posto se localiza \\
+Vicinity                        & Texto                          & 45                             & Endereço da vizinhança onde o posto se localiza \\
 Google Maps Id                  & Númerico                       &                                & Chave da api do Google Maps      \\
 Name                            & Texto                          & 45                             & Nome do posto de Gasolina\\
 \bottomrule
@@ -57,10 +57,10 @@ A tabela \ref{dic:pricesuggestion} mostra o dicionário de dados da entidade \te
 \label{dic:pricesuggestion}
 \begin{tabular}{cccc}
 \toprule
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Formato} & \textbf{Descrição} \\
 \midrule
-Type                            & Numérico                       &1                               & Define o tipo de combustível (Gasolina, Álcool ou Diesel)\\
-Value                           & Numérico                       &2,2                             & Valor do combustível\\
+Type                            & Numérico                       & 1                              & Define o tipo de combustível (Gasolina, Álcool ou Diesel)\\
+Value                           & Numérico                       & 2,2                          & Valor do combustível\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -72,12 +72,12 @@ A tabela \ref{dic:fuelsupply} mostra o dicionário de dados da entidade \textit{
 \label{dic:fuelsupply}
 \begin{tabular}{cccc}
 \toprule
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição}\\
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Formato} & \textbf{Descrição}\\
 \midrule
-Date                            & Data                           &dd/mm/yy                        & Data que o usuário abasteceu no posto\\
+Date                            & Data                           & dd/mm/yyyy                       & Data que o usuário abasteceu no posto\\
 Fueled                          & Boleano                        &                                & \begin{tabular}[l]{@{}c@{}}Define se o usuário abasteceu ou não \\no posto em que parou\end{tabular}\\
 Boycotted                       & Boleano                        &                                & \begin{tabular}[l]{@{}c@{}}Define se o posto que o usuário parou\\ estava na lista de postos boicotados\end{tabular} \\
-Value                           & Numérico                       &2,2                             & Valor de combustível abastecido\\
+Value                           & Numérico                       & 2,2                             & Valor de combustível abastecido\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -91,8 +91,8 @@ A tabela \ref{dic:boycott} mostra o dicionário de dados da entidade \textit{Boy
 \toprule
 \textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição}   \\
 \midrule
-Start Date                      & Data                           &dd/mm/yy                         & Data de início da lista de boicote \\
-End Date                        & Data                           &dd/mm/yy                         & Data final da lista de boicote\\
+Start Date                      & Data                           & dd/mm/yyyy                & Data de início da lista de boicote \\
+End Date                        & Data                           & dd/mm/yyyy                & Data final da lista de boicote\\
 \bottomrule
 \end{tabular}
 \end{table}
