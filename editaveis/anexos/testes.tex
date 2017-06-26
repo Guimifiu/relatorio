@@ -36,9 +36,9 @@
    captionpos=b
 }
 
-O teste unitário relizado em serviços precisa de um \textit{mock} para o \textit{backend}, uma vez que o objetivo é testar a unidade separadamente.
+O teste unitário relizado em serviços precisa de um \textit{mock}, que é a simulação de algum objeto para testes, para o \textit{backend}, uma vez que o objetivo é testar a unidade separadamente.
 O código abaixo é um exemplo de teste unitário de um serviço simulando a comunicação com a API, para garantir que o serviço funciona por si só.
-É criado um usuário fictício e quando o serviço é chamado para procurar um usuário pelo email, o usuário retornado tem que ter o nome e e sobrenome definido no \textit{mock}.
+Entre as linhas 31 e 43, é criado um usuário fictício e quando o serviço é chamado para procurar um usuário pelo email, na linha 51, o usuário retornado tem que ter o nome e e sobrenome definido no \textit{mock}, como requisitado nas linhas 54 e 55.
 
 \medskip
 \begin{lstlisting}
@@ -104,8 +104,8 @@ describe('Unit test: Providers: UserService', () => {
 \end{lstlisting}
 
 Foi realizado o mesmo teste no serviço de usuários porém agora integrado com a API sem a criação de um \textit{mock} para ela.
-O código abaixo mostra que antes de cada teste ser relizado um usuário é criado na API e depois de cada teste ele é deletado.
-Ao pedir para a API retornar o usuário pelo email, o nome e o sobrenome tem que ser os mesmos do usuário criado antes do teste acontecer.
+O código abaixo mostra que antes de cada teste ser relizado um usuário é criado na API, como mostrado nas linhas 19 à 28, e depois de cada teste ele é deletado nas linhas 30 à 32.
+Ao pedir para a API retornar o usuário pelo email, na linha 37, o nome e o sobrenome tem que ser os mesmos do usuário criado antes do teste acontecer, como requisitado nas linhas 40 e 41.
 
 
 \medskip
