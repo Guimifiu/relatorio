@@ -4,7 +4,7 @@ Na API a integração contínua é feita com a ferramenta TravisCI. Onde, se um 
 
 Caso um \textit{pull request} seja aceito na \textit{branch} \textit{master} todo o processo será o mesmo, com exceção que o \textit{deploy} irá ocorrer no ambiente de produção no Heroku.
 
-A figura \ref{img:integracao_deploy_continuo_api} ilustra o processo de integração e deploy contínuo feito na API.
+A Figura \ref{img:integracao_deploy_continuo_api} ilustra o processo de integração e deploy contínuo feito na API.
 
 \begin{figure}[H]
     \centering
@@ -13,7 +13,7 @@ A figura \ref{img:integracao_deploy_continuo_api} ilustra o processo de integra�
     \label{img:integracao_deploy_continuo_api}
 \end{figure}
 
-No aplicativo, foi planejada a integração e o deploy contínuo para ocorrer como mostra a figura \ref{img:integracao_deploy_continuo_planejado_app}:
+No aplicativo, foi planejada a integração e o deploy contínuo para ocorrer como mostra a Figura \ref{img:integracao_deploy_continuo_planejado_app}:
 
 \begin{figure}[H]
     \centering
@@ -25,7 +25,7 @@ No aplicativo, foi planejada a integração e o deploy contínuo para ocorrer co
 Se um \textit{pull request} é aceito na \textit{branch} \textit{master}, o Travis irá realizar toda a suíte de testes, caso todos passem enviará as informações de cobertura para o
 Codecov e através do Fastlane realizará o deploy do aplicativo tanto na Play Store quanto na App Store. E caso um \textit{pull request} seja aceito na \textit{branch} \textit{staging}, todo o processo é repetido, exceto quando não é realizado o deploy do aplicativo nas lojas e sim no Crashlytics, que irá criar a versão beta do aplicativo e enviará por email para os emails configurados previamente.
 
-Uma vez que o aplicativo ainda não chegou ao estágio de deploy nas lojas, o planejamento para a primeira entrega é só até o deploy beta, como mostrado na figura \ref{img:integracao_deploy_continuo_planejado_primeira_entrega}:
+Uma vez que o aplicativo ainda não chegou ao estágio de deploy nas lojas, o planejamento para a primeira entrega é só até o deploy beta, como mostrado na Figura \ref{img:integracao_deploy_continuo_planejado_primeira_entrega}:
 
 \begin{figure}[H]
     \centering
@@ -40,7 +40,7 @@ Entretanto, não foi possível fazer com que o deploy contínuo aconteça logo a
   $ fastlane beta
 \end{lstlisting}
 
-Sendo assim, a figura \ref{img:integracao_deploy_continuo_atual} ilustra como está funcionando a integração e o deploy contínuo do aplicativo até o presente momento.
+Sendo assim, a Figura \ref{img:integracao_deploy_continuo_atual} ilustra como está funcionando a integração e o deploy contínuo do aplicativo até o presente momento.
 
 \begin{figure}[H]
     \centering
