@@ -2,34 +2,34 @@
 
 \subsection{Linguagens e \textit{Frameworks}}
 
-O aplicativo Guimifiu está sendo desenvolvido utilizando o framework Ionic 2, que por sua vez utiliza Typescript como linguagem de programação. O Typescript é uma linguagem que facilita o desenvolvimento em JavaScript em larga escala. É uma linguagem fortemente tipada, e que facilita a aplicação de orientação a objetos em aplicações JavaScript. O Typescript é compilado e transformado em JavaScript \cite{typescript}. O Ionic 2 é um framework livre criado pela em 2012 que utiliza o Cordova e o Typescript para utilizar funções nativas dos aparelhos móveis e criar aplicativos multi-plataforma a partir de um único código \cite{ionic-2}.
+O aplicativo Guimifiu está sendo desenvolvido utilizando o \textit{framework} Ionic 2, que por sua vez utiliza TypeScript como linguagem de programação. O TypeScript é uma linguagem que facilita o desenvolvimento em JavaScript em larga escala. É uma linguagem fortemente tipada, e que facilita a aplicação de orientação a objetos em aplicações JavaScript. O TypeScript é compilado e transformado em JavaScript \cite{typescript}. O Ionic 2 é um \textit{framework} livre criado pela \textit{Drifty Co.} em 2012 que empacota o Cordova e o TypeScript para utilizar funções nativas dos aparelhos móveis e criar aplicativos multi-plataforma a partir de um único código \cite{ionic-2}.
 
-Em conjunto com o desenvolvimento do aplicativo, está sendo desenvolvido uma API RESTful utilizando a linguagem de programação Ruby com o \textit{framework} Ruby on Rails. Criado em 1995, o Ruby é uma linguagem de tipagem dinâmica \textit{open source} que foi criada como sendo uma junção das melhores partes das linguagens Perl, Smalltak, Eiffel, Ada e Lisp. O Ruby permite \textit{multithreading} independente se o sistema operacional suporta ou não \cite{ruby-wow}. O Ruby on Rails é um \textit{framework} criado em 2004 para desenvolvimento de aplicações web que faz com que o programador use o paradigma de convenção sobre configuração \cite{rails}. Vários softwares são desenvolvidos em Ruby on Rails como o GitHub, Shopify, Hulu e Twitch. A representação dos dados da API são em JSON.
+Em conjunto com o desenvolvimento do aplicativo, está sendo desenvolvido uma API RESTful utilizando a linguagem de programação Ruby com o \textit{framework} Ruby on Rails. Criado em 1995, o Ruby é uma linguagem de tipagem dinâmica \textit{open source} que foi criada como sendo uma junção das melhores partes das linguagens Perl, Smalltak, Eiffel, Ada e Lisp. O Ruby permite \textit{multithreading} independente se o sistema operacional suporta ou não \cite{ruby-wow}. O Ruby on Rails é um \textit{framework} criado em 2004 para desenvolvimento de aplicações \textit{web} que faz com que o programador use o paradigma de convenção sobre configuração \cite{rails}. Vários softwares são desenvolvidos em Ruby on Rails como o GitHub, Shopify, Hulu e Twitch. A representação dos dados da API são em JSON.
 
 \subsection{Testes}
 
-Para a aplicação mobile, foram utilizados os \textit{frameworks open source} Jasmine para escrever os testes e o Karma para rodar a suíte. O Karma é um ambiente de teste para Javascript onde os desenvolvedores conseguem \textit{feedbacks} rápidos do código que estão desenvolvendo \cite{karma}. O Jasmine é um \textit{framework} que utiliza conceitos de \textit{behavior-driven development} para escrever testes \cite{jasmine}. O CodeCov foi utilizado para adquirir a cobertura de código dos testes.
+Para a aplicação \textit{mobile}, foram utilizados os \textit{frameworks open source} Jasmine para escrever os testes e o Karma para rodar a suíte. O Karma é um ambiente de teste para JavaScript que os desenvolvedores conseguem \textit{feedbacks} rápidos do código que estão desenvolvendo \cite{karma}. O Jasmine é um \textit{framework} que utiliza conceitos de \textit{behavior-driven development} para escrever testes \cite{jasmine}. O CodeCov foi utilizado para adquirir a cobertura de código dos testes.
 
 Para a API, foi utilizado o RSpec, que é uma ferramenta para escrever e executar a suíte de testes \cite{rspec} e o Coveralls que adquire a cobertura de código dos testes \cite{coveralls}.
 
 \subsection{Métricas de Código-fonte}
-Para as métricas de código-fonte da aplicação mobile, foi utilizado o TSLint, que checa código TypeScript em questões de manutenabilidade, leitura e erros funcionais \cite{tslint}.
+Para as métricas de código-fonte da aplicação \textit{mobile}, foi utilizado o TSLint, que checa código TypeScript em questões de manutenabilidade, leitura e erros funcionais \cite{tslint}.
 
-No código-fonte da API, foi utilizado o CodeClimate, uma ferramenta que baixa o código do Github e checa em seus servidores a complexidade do código, duplicação, estilo e segurança \cite{codeclimate}. O CodeClimate utiliza as seguintes para gerar o relatório final:
+No código-fonte da API foi utilizado o CodeClimate, uma ferramenta que baixa o código do Github e checa em seus servidores a complexidade do código, duplicação, estilo e segurança \cite{codeclimate}. O CodeClimate utiliza as seguintes para gerar o relatório final:
 \begin{itemize}
-    \item \textbf{Reek}, para verificação de \textit{code smells}, que são sintomas no código-fonte que podem gerar problemas;
-    \item \textbf{Flog}, para a verificação da complexidade do código Ruby;
-    \item \textbf{Rubocop}, que verifica estilo e qualidade do código;
-    \item \textbf{Brakeman}, para uma verificação estática de segurança do código;
+    \item \textbf{Reek:} para verificação de \textit{code smells}, que são sintomas no código-fonte que podem gerar problemas;
+    \item \textbf{Flog:} para a verificação da complexidade do código Ruby;
+    \item \textbf{Rubocop:} que verifica estilo e qualidade do código;
+    \item \textbf{Brakeman:} para uma verificação estática de segurança do código.
 \end{itemize}
 
-Além disso, é também uma ferramenta própria do CodeClimate para checar duplicações de código.
+Além disso, é também uma ferramenta própria do CodeClimate para checagem de duplicações de código.
 
 O Rubocop foi utilizado também fora do CodeClimate para medir a complexidade do código. Além de complexidade, o Rubocop possui diversas outras ferramentas embutidas que verificam outros aspectos baseados no guia de estilo do Ruby mantido pela comunidade \cite{rubocop}. Os padrões mínimos ou máximos dessas outras ferramentas serão analisadas com o desenvolvimento do projeto.
 
 \subsection{Integração e Entrega Contínua}
 
-O TravisCI é uma ferramenta grátis para projetos \textit{open source} que faz a integração contínua de projetos em várias linguagens. As \textit{builds} são feitas imediatamente após os \textit{pushes} na ferramenta de controle de versão e, através de um script criado pelo usuário, o Travis configura e roda a suíte de testes do commit. Além disso, o Travis também pode fazer \textit{deploys} no Heroku caso a \textit{build} esteja passando \cite{travis-ci}.
+O TravisCI é uma ferramenta grátis para projetos \textit{open source} que faz a integração contínua de projetos em várias linguagens. As \textit{builds} são feitas imediatamente após os \textit{pushes} na ferramenta de controle de versão e, através de um script criado pelo usuário, o Travis configura e roda a suíte de testes do \textit{commit}. Além disso, o Travis também pode fazer \textit{deploys} no Heroku caso a \textit{build} esteja passando \cite{travis-ci}.
 
 O Heroku é uma plataforma que permite criar, entregar, monitorar e escalar aplicativos. Comumente utilizado para o \textit{deploy} de aplicações web, o Heroku também serve para hospedar serviços na nuvem, facilitando a arquitetura de aplicativo-API \cite{heroku}.
 
@@ -38,11 +38,11 @@ O Fastlane é uma ferramenta \textit{open source} para automatizar a entrega con
 \subsection{Prototipação}
 
 Após a finalização do \textit{Crazy Eights}, foi escolhido as melhores telas para serem levadas como base da construcação do aplicativo.
-Com os requisitos validados, foram desenhados protótipos de baixa fidelidade para a histórias de usuários que seriam desenvolvidas.
-Sendo assim a prototipação fez o uso de duas ferramentas:
+Com os requisitos validados, foram desenhados protótipos de baixa fidelidade para as histórias de usuários que seriam desenvolvidas.
+Sendo assim, a prototipação fez o uso de duas ferramentas:
 \begin{itemize}
-    \item \textbf{Marvelapp}, utilizado para simular o fluxo das telas geradas pelo \textit{Crazy Eights}, onde é possível tirar fotos dos protótipos desenhados e criar transições nas telas desenhadas de forma a mostrar o fluxo da aplicação, que pode ser tanto web quando para Android e iOS \cite{marvelapp}.
-    \item \textbf{NinjaMock}, utilizado para a prototipação de baixa fidelidade das histórias de usuário. É uma ferramenta de criação de \textit{wireframe designs} para plataformas móveis e web \cite{ninjamock}.
+    \item \textbf{Marvelapp:} utilizado para simular o fluxo das telas geradas pelo \textit{Crazy Eights}, onde é possível tirar fotos dos protótipos desenhados e criar transições nas telas desenhadas de forma a mostrar o fluxo da aplicação, que pode ser tanto web quando para Android e iOS \cite{marvelapp};
+    \item \textbf{NinjaMock:} utilizado para a prototipação de baixa fidelidade das histórias de usuário. É uma ferramenta de criação de \textit{wireframe designs} para plataformas móveis e web \cite{ninjamock}.
 \end{itemize}
 Os protótipos podem ser encontrados no Anexo \ref{chap:prototipo}
 
