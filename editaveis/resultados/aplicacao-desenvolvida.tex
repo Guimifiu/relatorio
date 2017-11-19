@@ -1,18 +1,47 @@
 \section{Aplicação Desenvolvida}
 Para a segunda entrega do aplicativo, foram desenvolvidos os seguintes requisitos já elicitados na primeira entrega:
 \begin{itemize}
-    \item Eu, como motorista, gostaria de me cadastrar no sistema para ter acesso ao login;
-    \item Eu, como motorista, gostaria de logar no sistema para utilizar as funcionalidades do mesmo;
+    \item Eu, como motorista, gostaria de me cadastrar no sistema para ter acesso ao mesmo;
+    \item Eu, como motorista, gostaria de me autenticar no sistema para utilizar as funcionalidades do mesmo;
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/app_final_1.jpg}
+        \caption[Tela de autenticação do aplicativo.]{Tela de autenticação do aplicativo. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
     \item Eu, como motorista, gostaria de ver os postos dentro de uma rota para facilitar a minha escolha de posto;
+    \item Eu, como motorista, desejo abrir a rota de um posto de combustível com outros softwares de navegação para conseguir chegar à ele;
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/app_final_4.jpg}
+        \caption[Tela de detalhes do posto de combustível na rota.]{Tela de detalhes do posto de combustível na rota. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
     \item Eu, como motorista, gostaria de avaliar o posto onde eu abasteci para atribuir uma qualidade ao mesmo;
-    \item Eu, como motorista, gostaria de informar se estou ou não abastecendo no posto para contribuir com os dados coletados pelo aplicativo;
-    \item Eu, como motorista, gostaria de ver uma lista com todos os postos boicotados para me programar com antecedência em onde abastecer;
-    \item Eu, como motorista, gostaria de saber quando eu estou em um posto de combustíveis para interagir com o mesmo;
-    \item Eu, como motorista, gostaria de editar o meu cadastro para manter minhas informações atualizadas;
-    \item Eu, como motorista, gostaria de registrar o preço de combustíveis, álcool ou diesel do posto onde eu me encontro para ele sempre estar com o preço correto;
-    \item Eu, como desenvolvedor, desejo mapear os postos de combustíveis para que sejam tratados no sistema;
-    \item Eu, como motorista, gostaria de editar o meu cadastro para manter minhas informações atualizadas;
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/app_final_10.jpg}
+        \caption[Tela de preenchimento de dados do abastecimento feito.]{Tela de preenchimento de dados do abastecimento feito. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
     \item Eu, como motorista, gostaria de ver as informações do posto onde eu estou, para saber se quero abastecer nele ou não.
+    \item Eu, como motorista, gostaria de informar se estou ou não abastecendo no posto para contribuir com os dados coletados pelo aplicativo;
+    \item Eu, como motorista, gostaria de registrar o preço de combustíveis, álcool ou diesel do posto onde eu me encontro para ele sempre estar com o preço correto;
+    \item Eu, como motorista, gostaria de saber quando eu estou em um posto de combustíveis para interagir com o mesmo;
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/app_final_5.jpg}
+        \caption[Tela de detalhes do posto onde o usuário se encontra.]{Tela de detalhes do posto onde o usuário se encontra. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
+    \item Eu, como motorista, gostaria de editar o meu cadastro para manter minhas informações atualizadas;
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/app_final_3.jpg}
+        \caption[Tela de edição de dados do usuário.]{Tela de edição de dados do usuário. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
+    \item Eu, como desenvolvedor, desejo mapear os postos de combustíveis para que sejam tratados no sistema;
 \end{itemize}
 
 A Figura \ref{img:tela_de_login} mostra a tela de login da aplicação. O login pode ser feito via Facebook, Google ou criando uma conta local.
@@ -36,11 +65,43 @@ Como ilustrado na Figura \ref{img:postos_de_gasolina_proximos}, são mostrados n
 Além desses requisitos, foram elicitados os seguintes novos itens que se mostraram imprescindíveis para a aplicação:
 
 \begin{itemize}
-    \item Eu, como administrador, gostaria de entrar no sistema para ajustar configurações básicas do sistema;
+    \item Eu, como administrador, gostaria de me autenticar no sistema para ajustar configurações básicas do mesmo;
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/admin_screenshot_1.png}
+        \caption[Tela inicial do sistema administrador.]{Tela inicial do sistema administrador. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
     \item Eu, como administrador, gostaria de adicionar as bandeiras dos postos para facilitar a identificação pelo usuário;
     \item Eu, como administrador, gostaria de alterar as informações dos postos cadastrados para garantir a verossimilhança dos dados vindos de fontes externas ao sistema;
+    \item Eu, como administrador, gostaria de criar boicote por bandeiras para que o boicote seja efetivo diretamente à uma bandeira específica.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/admin_screenshot_2.png}
+        \caption[Tela de criação de boicotes por bandeira no sistema administrador.]{Tela de criação de boicotes por bandeira no sistema administrador. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
     \item Eu, como motorista, gostaria de visualizar um gráfico contendo os gastos mensais com combustível para controlar melhor o meu orçamento;
-    \item Eu, como motorista, gostaria de visualizar um histórico de postos onde passei para controlar melhor os meus gastos.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/app_final_8.jpg}
+        \caption[Tela com o gráfico dos gastos mensais para os diferentes tipos de combustíveis.]{Tela com o gráfico dos gastos mensais para os diferentes tipos de combustíveis. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
+    \item Eu, como motorista, gostaria de visualizar um histórico de postos onde passei para controlar melhor os meus gastos;
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/app_final_6.jpg}
+        \caption[Tela com o histórico de abastecimentos do usuário.]{Tela com o histórico de abastecimentos do usuário. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{figuras/app_final_7.jpg}
+        \caption[Tela com o histórico de abastecimentos do usuário em postos com bandeiras definidas.]{Tela com o histórico de abastecimentos do usuário em postos com bandeiras definidas. Fonte: autores}
+        \label{img:telaautenticacao}
+    \end{figure}
+    \item Eu, como desenvolvedor, gostaria de criar um algoritmo para definir quais serão os postos boicotados.
 \end{itemize}
 
 As funcionalidades de administrador se mostraram imprescindíveis para facilitar a identificação dos postos de combustíveis pelo usuário através de ícones nos postos de gasolina indicando as bandeiras dos postos. Outra necessidade observada durante o segundo período do projeto foram algumas informações fornecidas pela API do Google possuíam erros. Com o módulo de administração, é possível corrigir esses erros pontuais. Além disso, como a primeira versão do aplicativo que vai para a Play Store não irá possuir as funcionalidades que irão garantir a qualidade dos dados de preços dos combustíveis, mostrou-se importante ser possível editar os dados de sugestões de preço manualmente de forma mais prática. A Figura \ref{img:admin-1} mostra a página inicial do módulo de administração.
@@ -113,7 +174,7 @@ A lista inicial é montada e depois é verificado se não existem muitos postos 
     \label{img:listacomum}
 \end{figure}
 
-O \textbf{Boicote por Bandeiras} escolhe uma bandeira e todos os postos dessa bandeira são colocados na lista de boicotados, independentemente da distância entre eles, colocando o prejuízo do boicote menos nos postos e mais na bandeira. Os dois tipos de boicote são exclusivos, ou seja, os dois não ocorrem no mesmo período. A estratégia de boicote é escolhida pela equipe de desenvolvimento. O Boicote por Bandeiras é determinado manualmente no módulo de administração, como mostra a Figura \ref{img:admin-2}
+O \textbf{Boicote por Bandeiras} escolhe uma bandeira e todos os postos dessa bandeira são colocados na lista de boicotados, independentemente da distância entre eles, colocando o prejuízo do boicote menos nos postos e mais na bandeira. Os dois tipos de boicote são exclusivos, ou seja, os dois não ocorrem no mesmo período. A estratégia de boicote é escolhida pela equipe de desenvolvimento. O \textbf{Boicote por Bandeiras} é iniciado manualmente no módulo de administração, como mostra a Figura \ref{img:admin-2}
 
 \begin{figure}[H]
     \centering
@@ -121,6 +182,9 @@ O \textbf{Boicote por Bandeiras} escolhe uma bandeira e todos os postos dessa ba
     \caption[Página de criação de Boicotes do módulo de administração]{Página de criação de Boicotes do módulo de administração. Fonte: autores}
     \label{img:admin-2}
 \end{figure}
+
+Baseado no algoritmo foi desenvolvido um \textit{script} na linguagem Ruby que é executado semanalmente no servidor hospedado no Heroku, através do Heroku Scheduler.
+
 
 \subsection{Testes Automatizados}
 
@@ -143,7 +207,7 @@ A Figura \ref{img:rubocop} mostra o resultado da análise feita pelo Rubocop. O 
     \label{img:rubocop}
 \end{figure}
 
-A Figura \ref{img:codeclimate} mostra o resultado das análises realizado pelo \href{https://codeclimate.com/github/Guimifiu/guimifiu-backend/}{CodeClimate}. 
+A Figura \ref{img:codeclimate} mostra o resultado das análises realizado pelo \href{https://codeclimate.com/github/Guimifiu/guimifiu-backend/}{CodeClimate}.
 
 \begin{figure}[H]
     \centering
@@ -157,4 +221,3 @@ Seis das sete \textit{issues} encontradas foram por motivo do CodeClimate utiliz
 
 \subsection{Integração e Entrega Contínua}
 \input{editaveis/resultados/integracao-e-deploy-continuo}
-
