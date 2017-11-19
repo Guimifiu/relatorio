@@ -15,6 +15,24 @@ Para a segunda entrega do aplicativo, foram desenvolvidos os seguintes requisito
     \item Eu, como motorista, gostaria de ver as informações do posto onde eu estou, para saber se quero abastecer nele ou não.
 \end{itemize}
 
+A Figura \ref{img:tela_de_login} mostra a tela de login da aplicação. O login pode ser feito via Facebook, Google ou criando uma conta local.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/app_1.jpg}
+    \caption[Tela de login]{Tela de login. Fonte: autores}
+    \label{img:tela_de_login}
+\end{figure}
+
+Como ilustrado na Figura \ref{img:postos_de_gasolina_proximos}, são mostrados na aplicação todos os postos de combustíveis próximos a localização do usuário em um raio de 5km.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/app_2.jpg}
+    \caption[Postos de combustíveis próximos]{Postos de combustíveis próximos. Fonte: autores}
+    \label{img:postos_de_gasolina_proximos}
+\end{figure}
+
 Além desses requisitos, foram elicitados os seguintes novos itens que se mostraram imprescindíveis para a aplicação:
 
 \begin{itemize}
@@ -25,14 +43,35 @@ Além desses requisitos, foram elicitados os seguintes novos itens que se mostra
     \item Eu, como motorista, gostaria de visualizar um histórico de postos onde passei para controlar melhor os meus gastos.
 \end{itemize}
 
-COLOCAR PRINTS DE ALGUMAS TELAS ENTRE ALGUNS ITENS
+As funcionalidades de administrador se mostraram imprescindíveis para facilitar a identificação dos postos de combustíveis pelo usuário através de ícones nos postos de gasolina indicando as bandeiras dos postos. Outra necessidade observada durante o segundo período do projeto foram algumas informações fornecidas pela API do Google possuíam erros. Com o módulo de administração, é possível corrigir esses erros pontuais. Além disso, como a primeira versão do aplicativo que vai para a Play Store não irá possuir as funcionalidades que irão garantir a qualidade dos dados de preços dos combustíveis, mostrou-se importante ser possível editar os dados de sugestões de preço manualmente de forma mais prática. A Figura \ref{img:admin-1} mostra a página inicial do módulo de administração.
 
-As funcionalidades de administrador se mostraram imprescindíveis para facilitar a identificação dos postos de combustíveis pelo usuário através de ícones nos postos de gasolina indicando as bandeiras dos postos. Outra necessidade observada durante o segundo período do projeto foram algumas informações fornecidas pela API do Google possuíam erros. Com o módulo de administração, é possível corrigir esses erros pontuais. Além disso, como a primeira versão do aplicativo que vai para a Play Store não irá possuir as funcionalidades que irão garantir a qualidade dos dados de preços dos combustíveis, mostrou-se importante ser possível editar os dados de sugestões de preço manualmente de forma mais prática. Viu-se também a importância de manter um controle na aplicação no que tange a controle de gastos do motorista e como isso age como um diferencial dos aplicativos atuais. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.32]{figuras/admin-1.png}
+    \caption[Página inicial do módulo de administração]{Página inicial do módulo de administração. Fonte: autores}
+    \label{img:admin-1}
+\end{figure}
 
-No Anexo \ref{chap:telas} encontram-se algumas telas da aplicação desenvolvida.
+Viu-se também a importância de manter um controle na aplicação no que tange a controle de gastos do motorista e como isso age como um diferencial dos aplicativos atuais. A Figura \ref{img:historico-app} ilustra o histórico de postos abastecidos pelo usuário, enquanto a Figura \ref{img:grafico-app} mostra o gráfico de gastos mensais.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/historico-app.jpg}
+    \caption[Página inicial do módulo de administração]{Página inicial do módulo de administração. Fonte: autores}
+    \label{img:historico-app}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/grafico-app.jpg}
+    \caption[Página inicial do módulo de administração]{Página inicial do módulo de administração. Fonte: autores}
+    \label{img:grafico-app}
+\end{figure}
+
+No Apêndice \ref{chap:telas} encontram-se algumas telas da aplicação desenvolvida.
 
 \subsection{Método de decisão de postos boicotados}
-Toda semana, serão selecionados postos onde os usuários serão incentivados a não abastecer. Para decidir quais postos serão boicotados, o Guimifiu tem duas estratégias principais: a \textbf{Lista Comum} e o \textbf{Boicote por Bandeiras}. A lista comum escolhe os postos que tenham uma qualidade geral menor que 1 e que não tenham sido boicotados recentemente e cria uma lista inicial. A qualidade geral de um posto é determinada pela fórmula a seguir onde são considerados o número de estrelas do posto e o preço dos combustíveis:
+Toda semana, em uma \textit{rake task} no Heroku \textit{Scheduler}, serão selecionados postos onde os usuários serão incentivados a não abastecer. Para decidir quais postos serão boicotados, o Guimifiu tem duas estratégias principais: a \textbf{Lista Comum} e o \textbf{Boicote por Bandeiras}. A lista comum escolhe os postos que tenham uma qualidade geral menor que 1 e que não tenham sido boicotados recentemente e cria uma lista inicial. A qualidade geral de um posto é determinada pela fórmula a seguir onde são considerados o número de estrelas do posto e o preço dos combustíveis:
 
 \begin{equation}
 \label{Equação para cálculo de qualidade geral do Combustível}
@@ -74,7 +113,14 @@ A lista inicial é montada e depois é verificado se não existem muitos postos 
     \label{img:listacomum}
 \end{figure}
 
-O \textit{Boicote por Bandeiras} escolhe uma bandeira e todos os postos dessa bandeira são colocados na lista de boicotados, independentemente da distância entre eles, colocando o prejuízo do boicote menos nos postos e mais na bandeira. Os dois tipos de boicote são exclusivos, ou seja, os dois não ocorrem no mesmo período. A estratégia de boicote é escolhida pela equipe de desenvolvimento.  
+O \textbf{Boicote por Bandeiras} escolhe uma bandeira e todos os postos dessa bandeira são colocados na lista de boicotados, independentemente da distância entre eles, colocando o prejuízo do boicote menos nos postos e mais na bandeira. Os dois tipos de boicote são exclusivos, ou seja, os dois não ocorrem no mesmo período. A estratégia de boicote é escolhida pela equipe de desenvolvimento. O Boicote por Bandeiras é determinado manualmente no módulo de administração, como mostra a Figura \ref{img:admin-2}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.32]{figuras/admin-2.png}
+    \caption[Página de criação de Boicotes do módulo de administração]{Página de criação de Boicotes do módulo de administração. Fonte: autores}
+    \label{img:admin-2}
+\end{figure}
 
 \subsection{Testes Automatizados}
 
@@ -82,7 +128,7 @@ Foram feitos testes de integração e unitários para garantir o funcionamento d
 
 Foi encontrada uma certa dificuldade pra realizar os testes unitários no Ionic, uma vez que não há muitos exemplos que de fato funcionam e uma documentação do próprio \textit{framework} sobre o assunto.
 
-O código de testes pode ser encontrado no repositório da aplicação no GitHub (https://github.com/Guimifiu/guimifiu-app). Um exemplo de teste unitário e um de teste de integração está disponível no Anexo \ref{chap:testes}.
+O código de testes pode ser encontrado no repositório da aplicação no GitHub (https://github.com/Guimifiu/guimifiu-app). Um exemplo de teste unitário e um de teste de integração está disponível no Apêndice \ref{chap:testes}.
 
 \subsection{Métricas de Código fonte}
 
