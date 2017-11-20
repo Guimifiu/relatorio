@@ -1,87 +1,114 @@
 \chapter{Dicionário de Dados}
 \label{chap:dicionario}
 
-A Tabela \ref{dic:user} mostra o dicionário de dados da entidade \textit{User}, que irá armazenar todas as informações dos usuários que se cadastrarem no aplicativo.
+A Tabela \ref{dic:user} mostra o dicionário de dados da entidade \textit{Usuario}, que irá armazenar todas as informações dos usuários que se cadastrarem no aplicativo.
 \begin{table}[H]
 \centering
-\caption{Dicionário de dados da entidade \textit{User}}
+\caption{Dicionário de dados da entidade \textit{Usuario}}
 \label{dic:user}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição} \\
  \hline
-Name                            & Texto                          & 45                             & Nome do usuário \\ \hline
-Surname                         & Texto                          & 45                             & Sobrenome do usuário\\ \hline
-Email                           & Texto                          & 45                             & Email do usuário\\ \hline
-Password                        & Texto                          & 45                             & \begin{tabular}[l]{@{}c@{}}Senha do usuário. Deve possuir um mínimo \\ de 8 caracteres\end{tabular}\\ \hline
+Nome                            & Texto                                                       & Nome do usuário \\ \hline
+Sobrenome                         & Texto                                                   & Sobrenome do usuário\\ \hline
+Email                           & Texto                                              & Email do usuário\\ \hline
+Senha                        & Texto                                             & \begin{tabular}[l]{@{}c@{}}Senha do usuário. Deve possuir um mínimo \\ de 8 caracteres\end{tabular}\\ \hline
 
 \end{tabular}
 \end{table}
 
-A Tabela \ref{dic:rating} mostra o dicionário de dados da entidade \textit{Rating}, que irá armazenar as notas dadas pelos usuários para os postos de gasolina.
+A Tabela \ref{dic:rating} mostra o dicionário de dados da entidade \textit{Avaliacao}, que irá armazenar as notas dadas pelos usuários para os postos de gasolina.
 \begin{table}[H]
 \centering
-\caption{Dicionário de dados da entidade \textit{Rating}}
+\caption{Dicionário de dados da entidade \textit{Avaliacao}}
 \label{dic:rating}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Formato} & \textbf{Descrição} \\ \hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição} \\ \hline
 
-Stars                           & Númerico                       & 1                              & \begin{tabular}[l]{@{}c@{}}Classificação de um posto de gasolina.\\ Pode ir de 0 a 5\end{tabular}\\ \hline
+Estrelas                           & Númerico                                               & \begin{tabular}[l]{@{}c@{}}Classificação de um posto de gasolina.\\ Pode ir de 0 a 5\end{tabular}\\ \hline
 
 \end{tabular}
 \end{table}
 
-A Tabela \ref{dic:gas_station} mostra o dicionário de dados da entidade \textit{GasStation}, que irá armazenar todas as informações dos postos de gasolina importados da API do Google Maps além de informações adicionadas pelos usuários do Guimifiu.
+A Tabela \ref{dic:gas_station} mostra o dicionário de dados da entidade \textit{PostoDeCombustivel}, que irá armazenar todas as informações dos postos de gasolina importados da API do Google Maps além de informações adicionadas pelos usuários do Guimifiu.
 \begin{table}[H]
 \centering
-\caption{Dicionário de dados da entidade \textit{GasStation}}
+\caption{Dicionário de dados da entidade \textit{PostoDeCombustivel}}
 \label{dic:gas_station}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\ \hline
-Latitude                        & Texto                          & 45                             & \begin{tabular}[l]{@{}c@{}}Latitude do posto de combustível.\\ Pode ir de 0 a 5\end{tabular}                 \\ \hline
-Longitude                       & Texto                          & 45                             & Longitude do posto de combustível\\ \hline
-Vicinity                        & Texto                          & 45                             & \begin{tabular}[l]{@{}c@{}}Endereço da vizinhança\\ onde o posto se localiza\end{tabular} \\ \hline
-Google Maps Id                  & Númerico                       &                                & Chave da api do Google Maps      \\ \hline
-Name                            & Texto                          & 45                             & Nome do posto de Gasolina\\ \hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição} \\ \hline
+Latitude                        & Texto                                                     & \begin{tabular}[l]{@{}c@{}}Latitude do posto de combustível.\\ Pode ir de 0 a 5\end{tabular}                 \\ \hline
+Longitude                       & Texto                                                       & Longitude do posto de combustível\\ \hline
+Vizinhanca                        & Texto                                                     & \begin{tabular}[l]{@{}c@{}}Endereço da vizinhança\\ onde o posto se localiza\end{tabular} \\ \hline
+Google Maps Id                  & Númerico                                                       & Chave da api do Google Maps      \\ \hline
+Nome                            & Texto                                                      & Nome do posto de Gasolina\\ \hline
 \end{tabular}
 \end{table}
 
-A Tabela \ref{dic:pricesuggestion} mostra o dicionário de dados da entidade \textit{PriceSuggestion}, que irá armazenar informações sobre a sugestão de preço dos combustíveis em um posto, por usuários que já estiveram nele.
+A Tabela \ref{dic:pricesuggestion} mostra o dicionário de dados da entidade \textit{SugestaoDePreco}, que irá armazenar informações sobre a sugestão de preço dos combustíveis em um posto, por usuários que já estiveram nele.
 \begin{table}[H]
 \centering
-\caption{Dicionário de dados da entidade \textit{PriceSuggestion}}
+\caption{Dicionário de dados da entidade \textit{SugestaoDePreco}}
 \label{dic:pricesuggestion}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Formato} & \textbf{Descrição} \\ \hline
-Type                            & Numérico                       & 1                              & \begin{tabular}[l]{@{}c@{}}Define o tipo de combustível\\(Gasolina, Álcool ou Diesel)\end{tabular}\\ \hline
-Value                           & Numérico                       & 2,2                          & Valor do combustível\\ \hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição} \\ \hline
+Tipo                            & Numérico                                                     & \begin{tabular}[l]{@{}c@{}}Define o tipo de combustível\\(Gasolina, Álcool ou Diesel)\end{tabular}\\ \hline
+Valor                           & Numérico                                                 & Valor do combustível\\ \hline
 
 \end{tabular}
 \end{table}
 
-A Tabela \ref{dic:fuelsupply} mostra o dicionário de dados da entidade \textit{FuelSupply}, que irá armazenar as informações sobre abastecimentos de usuários em posto de combustíveis.
+A Tabela \ref{dic:fuelsupply} mostra o dicionário de dados da entidade \textit{Abastecimento}, que irá armazenar as informações sobre abastecimentos de usuários em posto de combustíveis.
 \begin{table}[H]
 \centering
-\caption{Dicionário de dados da entidade \textit{FuelSupply}}
+\caption{Dicionário de dados da entidade \textit{Abastecimento}}
 \label{dic:fuelsupply}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Formato} & \textbf{Descrição}\\ \hline
-Date                            & Data                           & dd/mm/yyyy                       & Data que o usuário abasteceu no posto\\ \hline
-Fueled                          & Boleano                        &                                & \begin{tabular}[l]{@{}c@{}}Define se o usuário abasteceu ou não \\no posto em que parou\end{tabular}\\ \hline
-Boycotted                       & Boleano                        &                                & \begin{tabular}[l]{@{}c@{}}Define se o posto que o usuário parou\\ estava na lista de postos boicotados\end{tabular} \\ \hline
-Value                           & Numérico                       & 2,2                             & Valor de combustível abastecido\\ \hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição}\\ \hline
+Data                            & Data                                                & Data que o usuário abasteceu no posto\\ \hline
+Abastecido                          & Boleano                                           & \begin{tabular}[l]{@{}c@{}}Define se o usuário abasteceu ou não \\no posto em que parou\end{tabular}\\ \hline
+Boicotado                       & Boleano                                                  & \begin{tabular}[l]{@{}c@{}}Define se o posto que o usuário parou\\ estava na lista de postos boicotados\end{tabular} \\ \hline
+Valor                           & Numérico                                              & Valor de combustível abastecido\\ \hline
 
 \end{tabular}
 \end{table}
 
-A Tabela \ref{dic:boycott} mostra o dicionário de dados da entidade \textit{Boycott}, que irá armazenar os dados dos eventos chamados de boicotes a postos de combustíveis, que aconteceram com uma peridiocidade definida.
+A Tabela \ref{dic:boycott} mostra o dicionário de dados da entidade \textit{Boicote}, que irá armazenar os dados dos eventos chamados de boicotes a postos de combustíveis, que acontecerão com uma peridiocidade definida.
 \begin{table}[H]
 \centering
-\caption{Dicionário de dados da entidade \textit{Boycott}}
+\caption{Dicionário de dados da entidade \textit{Boicote}}
 \label{dic:boycott}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição}   \\ \hline
-Start Date                      & Data                           & dd/mm/yyyy                & Data de início da lista de boicote \\ \hline
-End Date                        & Data                           & dd/mm/yyyy                & Data final da lista de boicote\\ \hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição}   \\ \hline
+Data de Início                      & Data                                        & Data de início da lista de boicote \\ \hline
+Data de Término                        & Data                                     & Data final da lista de boicote\\ \hline
+
+\end{tabular}
+\end{table}
+
+
+A Tabela \ref{dic:distributor} mostra o dicionário de dados da entidade \textit{Bandeira}, que irá armazenar todas as banderias dos postos cadastrados no sistema.
+\begin{table}[H]
+\centering
+\caption{Dicionário de dados da entidade \textit{Bandeira}}
+\label{distributor}
+\begin{tabular}{|c|c|c|c|}\hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição}   \\ \hline
+Nome                      & Data                                        & Nome da bandeira \\ \hline
+Caminho da Imagem                        & Data                                     & Caminho da imagem do icone da bandeira no aplicativo\\ \hline
+
+\end{tabular}
+\end{table}
+
+A Tabela \ref{dic:boycott_distributor} mostra o dicionário de dados da entidade \textit{Boicote Bandeira}, que irá armazenar os dados dos eventos chamados de boicotes por bandeira, que acontecerão com uma peridiocidade definida. O boicote por bandeira define automaticamente todos os postos, da bandeira determinada, como boicotados.
+\begin{table}[H]
+\centering
+\caption{Dicionário de dados da entidade \textit{Boicote Bandeira}}
+\label{boycott_distributor}
+\begin{tabular}{|c|c|c|c|}\hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição}   \\ \hline
+Data de Início                      & Data                                        & Data de início da lista de boicote por bandeira \\ \hline
+Data de Término                        & Data                                     & Data final da lista de boicote por bandeira\\ \hline
 
 \end{tabular}
 \end{table}
