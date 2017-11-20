@@ -2,7 +2,7 @@ Há três tipos de ambientes no desenvolvimento desta aplicação: \textit{devel
 
 Na API a integração contínua é feita com a ferramenta TravisCI. Onde, se um \textit{pull request} é aceito na \textit{branch} \textit{staging}, o Travis executa toda a suíte de testes para ver se algum deles pode ter resultado em falha. Caso todos passem, ele verifica se todas as métricas definidas pelo Rubocop estão de acordo com o padrão definido. Caso todas as métricas passem, a \textit{build} de pré produção é criada, o Travis envia as informações de cobertura de testes para o Coveralls, as informações de métricas para o Code Climate e logo em seguida realiza o \textit{deploy} no ambiente de pré produção no Heroku.
 
-Caso um \textit{pull request} seja aceito na \textit{branch} \textit{master} todo o processo será o mesmo, com exceção que o \textit{deploy} irá ocorrer no ambiente de produção no Heroku.
+Se um \textit{pull request} for aceito na \textit{branch} \textit{master} todo o processo será o mesmo, com exceção que o \textit{deploy} irá ocorrer no ambiente de produção no Heroku.
 
 A Figura \ref{img:integracao_deploy_continuo_api} ilustra o processo de integração e \textit{deploy} contínuo feito na API.
 
@@ -23,7 +23,7 @@ No aplicativo foi planejada a integração e o \textit{deploy} contínuo para oc
 \end{figure}
 
 Se um \textit{pull request} é aceito na \textit{branch} \textit{master}, o Travis irá realizar toda a suíte de testes, caso todos passem enviará as informações de cobertura para o
-Codecov e através do Fastlane realizará o \textit{deploy} do aplicativo tanto na Play Store quanto na App Store. E caso um \textit{pull request} seja aceito na \textit{branch} \textit{staging}, todo o processo é repetido, exceto quando não é realizado o \textit{deploy} do aplicativo nas lojas e sim no Crashlytics, que irá criar a versão beta do aplicativo e o enviará para os emails configurados previamente.
+Codecov e através do Fastlane realizará o \textit{deploy} do aplicativo tanto na Play Store quanto na App Store. E se um \textit{pull request} for aceito na \textit{branch} \textit{staging}, todo o processo é repetido, exceto quando não é realizado o \textit{deploy} do aplicativo nas lojas e sim no Crashlytics, que irá criar a versão beta do aplicativo e o enviará para os emails configurados previamente.
 
 Uma vez que o aplicativo ainda não chegou ao estágio de \textit{deploy} nas lojas, o planejamento para a primeira entrega é só até o \textit{deploy} beta, como mostrado na Figura \ref{img:integracao_deploy_continuo_planejado_primeira_entrega}:
 
