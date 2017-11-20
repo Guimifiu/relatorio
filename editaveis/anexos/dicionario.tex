@@ -7,12 +7,12 @@ A Tabela \ref{dic:user} mostra o dicionário de dados da entidade \textit{Usuari
 \caption{Dicionário de dados da entidade \textit{Usuario}}
 \label{dic:user}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição} \\
  \hline
-nome                           & Texto                          & 45                             & Nome do usuário \\ \hline
-sobrenome                         & Texto                          & 45                             & Sobrenome do usuário\\ \hline
-email                           & Texto                          & 45                             & Email do usuário\\ \hline
-senha                       & Texto                          & 45                             & \begin{tabular}[l]{@{}c@{}}Senha do usuário. Deve possuir um mínimo \\ de 8 caracteres\end{tabular}\\ \hline
+Nome                            & Texto                                                       & Nome do usuário \\ \hline
+Sobrenome                         & Texto                                                   & Sobrenome do usuário\\ \hline
+Email                           & Texto                                              & Email do usuário\\ \hline
+Senha                        & Texto                                             & \begin{tabular}[l]{@{}c@{}}Senha do usuário. Deve possuir um mínimo \\ de 8 caracteres\end{tabular}\\ \hline
 
 \end{tabular}
 \end{table}
@@ -23,9 +23,8 @@ A Tabela \ref{dic:rating} mostra o dicionário de dados da entidade \textit{Aval
 \caption{Dicionário de dados da entidade \textit{Avaliacao}}
 \label{dic:rating}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Formato} & \textbf{Descrição} \\ \hline
-
-estrelas                           & Númerico                       & 1                              & \begin{tabular}[l]{@{}c@{}}Classificação de um posto de gasolina.\\ Pode ir de 0 a 5\end{tabular}\\ \hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição} \\ \hline
+Estrelas                           & Númerico                                               & \begin{tabular}[l]{@{}c@{}}Classificação de um posto de gasolina.\\ Pode ir de 0 a 5\end{tabular}\\ \hline
 
 \end{tabular}
 \end{table}
@@ -36,12 +35,12 @@ A Tabela \ref{dic:gas_station} mostra o dicionário de dados da entidade \textit
 \caption{Dicionário de dados da entidade \textit{PostoDeCombustivel}}
 \label{dic:gas_station}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição} \\ \hline
-latitude                        & Texto                          & 45                             & \begin{tabular}[l]{@{}c@{}}Latitude do posto de combustível.\\ Pode ir de 0 a 5\end{tabular}                 \\ \hline
-longitude                       & Texto                          & 45                             & Longitude do posto de combustível\\ \hline
-vizinhanca                        & Texto                          & 45                             & \begin{tabular}[l]{@{}c@{}}Endereço da vizinhança\\ onde o posto se localiza\end{tabular} \\ \hline
-google maps id                  & Númerico                       &                                & Chave da api do Google Maps      \\ \hline
-nome                            & Texto                          & 45                             & Nome do posto de Gasolina\\ \hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição} \\ \hline
+Latitude                        & Texto                                                     & \begin{tabular}[l]{@{}c@{}}Latitude do posto de combustível.\\ Pode ir de 0 a 5\end{tabular}                 \\ \hline
+Longitude                       & Texto                                                       & Longitude do posto de combustível\\ \hline
+Vizinhanca                        & Texto                                                     & \begin{tabular}[l]{@{}c@{}}Endereço da vizinhança\\ onde o posto se localiza\end{tabular} \\ \hline
+Google Maps Id                  & Númerico                                                       & Chave da api do Google Maps      \\ \hline
+Nome                            & Texto                                                      & Nome do posto de Gasolina\\ \hline
 \end{tabular}
 \end{table}
 
@@ -51,9 +50,9 @@ A Tabela \ref{dic:pricesuggestion} mostra o dicionário de dados da entidade \te
 \caption{Dicionário de dados da entidade \textit{SugestaoDePreco}}
 \label{dic:pricesuggestion}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Formato} & \textbf{Descrição} \\ \hline
-tipo                           & Numérico                       & 1                              & \begin{tabular}[l]{@{}c@{}}Define o tipo de combustível\\(Gasolina, Álcool ou Diesel)\end{tabular}\\ \hline
-valor                           & Numérico                       & 2,2                          & Valor do combustível\\ \hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição} \\ \hline
+Tipo                            & Numérico                                                     & \begin{tabular}[l]{@{}c@{}}Define o tipo de combustível\\(Gasolina, Álcool ou Diesel)\end{tabular}\\ \hline
+Valor                           & Numérico                                                 & Valor do combustível\\ \hline
 
 \end{tabular}
 \end{table}
@@ -64,11 +63,11 @@ A Tabela \ref{dic:fuelsupply} mostra o dicionário de dados da entidade \textit{
 \caption{Dicionário de dados da entidade \textit{Abastecimento}}
 \label{dic:fuelsupply}
 \begin{tabular}{|c|c|c|c|}\hline
-\textbf{Atributo} & \textbf{Domínio} & \textbf{Formato} & \textbf{Descrição}\\ \hline
-data                            & Data                           & dd/mm/yyyy                       & Data que o usuário abasteceu no posto\\ \hline
-abastecido                          & Boleano                        &                                & \begin{tabular}[l]{@{}c@{}}Define se o usuário abasteceu ou não \\no posto em que parou\end{tabular}\\ \hline
-boicotado                       & Boleano                        &                                & \begin{tabular}[l]{@{}c@{}}Define se o posto que o usuário parou\\ estava na lista de postos boicotados\end{tabular} \\ \hline
-valor                           & Numérico                       & 2,2                             & Valor de combustível abastecido\\ \hline
+\textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição}\\ \hline
+Data                            & Data                                                & Data que o usuário abasteceu no posto\\ \hline
+Abastecido                          & Boleano                                           & \begin{tabular}[l]{@{}c@{}}Define se o usuário abasteceu ou não \\no posto em que parou\end{tabular}\\ \hline
+Boicotado                       & Boleano                                                  & \begin{tabular}[l]{@{}c@{}}Define se o posto que o usuário parou\\ estava na lista de postos boicotados\end{tabular} \\ \hline
+Valor                           & Numérico                                              & Valor de combustível abastecido\\ \hline
 
 \end{tabular}
 \end{table}
@@ -81,11 +80,12 @@ A Tabela \ref{dic:boycott} mostra o dicionário de dados da entidade \textit{Boi
 \label{dic:boycott}
 \begin{tabular}{|c|c|c|c|}\hline
 \textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição}   \\ \hline
-data de inicio                      & Data                           & dd/mm/yyyy                & Data de início da lista de boicote \\ \hline
-data de termino                       & Data                           & dd/mm/yyyy                & Data final da lista de boicote\\ \hline
+Data de Início                      & Data                           & dd/mm/yyyy                & Data de início da lista de boicote \\ \hline
+Data de Término                       & Data                           & dd/mm/yyyy                & Data final da lista de boicote\\ \hline
 
 \end{tabular}
 \end{table}
+
 
 Representado na Tabela \ref{dic:flag}, o dicionário de dados da entidade \textit{Bandeira} armazenará os dados das bandeiras dos postos de gasolina, auxiliando tanto na identificação quanto no boicote por bandeira.
 
@@ -95,8 +95,8 @@ Representado na Tabela \ref{dic:flag}, o dicionário de dados da entidade \texti
 \label{dic:flag}
 \begin{tabular}{|c|c|c|c|}\hline
 \textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição}   \\ \hline
-nome                      & Texto                           & 45                & Nome da bandeira \\ \hline
-caminho da imagem                       & Texto                           & 45                & Caminho da imagem da bandeira\\ \hline
+Nome                      & Texto                           & 45                & Nome da bandeira \\ \hline
+Caminho da Imagem                       & Texto                           & 45                & Caminho da imagem da bandeira\\ \hline
 
 \end{tabular}
 \end{table}
@@ -109,8 +109,8 @@ Por fim, a Tabela \ref{dic:flag_boycott} representa o dicionário de dados da en
 \label{dic:flag_boycott}
 \begin{tabular}{|c|c|c|c|}\hline
 \textbf{Atributo} & \textbf{Domínio} & \textbf{Tamanho} & \textbf{Descrição}   \\ \hline
-data de inicio                      & Data                           & dd/mm/yyyy                & Data de início da lista de boicote \\ \hline
-data de termino                       & Data                           & dd/mm/yyyy                & Data final da lista de boicote\\ \hline
+Data de Início                      & Data                           & dd/mm/yyyy                & Data de início da lista de boicote \\ \hline
+Data de Término                       & Data                           & dd/mm/yyyy                & Data final da lista de boicote\\ \hline
 
 \end{tabular}
 \end{table}
