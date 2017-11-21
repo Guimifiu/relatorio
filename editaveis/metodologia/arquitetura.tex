@@ -2,14 +2,6 @@
 
 \subsection{Representação da Arquitetura}
 
-O aplicativo é dividido em certo certos pacotes: 
-
-\begin{itemize}
-\item\textbf{\textit{app}}: onde o \textit{framework} inicia o aplicativo; !!!!!!EXPLICAR MELHOR!!!!!!
-\item\textbf{\textit{pages}}: onde são colocadas as páginas do aplicativo, como o login, a página de registro de contas, entre outras. Cada página é composta de HTML e CSS, que compõem o visual da página e o Typescript que é onde está a parte lógica da página; 
-\item\textbf{\textit{providers}}: onde ficam os métodos que fazem a comunicação da API com o aplicativo.
-\end{itemize}
-
 A forma como está sendo utilizado o \textit{framework} Ionic pode ser representado com diagrama de pacotes representado na Figura \ref{img:pacotes}:
 
 \begin{figure}[H]
@@ -20,6 +12,16 @@ A forma como está sendo utilizado o \textit{framework} Ionic pode ser represent
 \end{figure}
 \pagebreak
 
+\begin{itemize}
+\item\textbf{\textit{src}}: é o diretório fonte da aplicação, onde os principais recursos serão salvos.
+\item\textbf{\textit{app}}: onde o \textit{framework} reúne todos os recursos para serem compilados.
+\item\textbf{\textit{pages}}: são colocadas as páginas do aplicativo, como o login, a página de registro de contas, entre outras. Cada página é composta de HTML e CSS, que compõem o visual da página e o Typescript que é onde está a parte lógica da página;
+\item\textbf{\textit{providers}}: ficam os métodos que fazem a comunicação da API com o aplicativo.
+\item\textbf{\textit{tests}}: encontram-se os diferentes tipos de testes de software realizados no applicativo.
+\item\textbf{\textit{integration}}: onde se encontram os testes de integração.
+\item\textbf{\textit{unit}}: onde se encontram os testes de unidade.
+\end{itemize}
+
 A arquitetura da API é baseada na arquitetura MVC e está definida como ilustra a Figura \ref{img:arquitetura}:
 
 \begin{figure}[H]
@@ -29,6 +31,7 @@ A arquitetura da API é baseada na arquitetura MVC e está definida como ilustra
     \label{img:arquitetura}
 \end{figure}
 
+As classes modelos se comunicam com o banco de dados e com as classes controladoras, que por sua vez enviam e recebem dados para as rotas que são disponibilizadas por um servidor web e o usuário pode acessar esses dados atráves de um navegador ou outro tipo de aplicação cliente.
 
 \subsection{Modelo de Dados}
 
