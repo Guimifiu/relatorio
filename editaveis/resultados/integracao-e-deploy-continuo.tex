@@ -34,7 +34,7 @@ Para a primeira entrega do trabalho, foi planejado só até o \textit{deploy} be
     \label{img:integracao_deploy_continuo_planejado_primeira_entrega}
 \end{figure}
 
-Entretanto, não foi possível fazer com que o \textit{deploy} contínuo acontecesse logo após a integração contínua, um desafio causado por escolher desenvolvimento híbridos de aplicativo. Uma vez que o código versionado do aplicativo é o mesmo código para a plataforma Android e iOS, e após realizar a \textit{build} desse código é gerado códigos em cada plataforma (não versionados). A ferramenta de integração contínua não consegue ter acesso aos códigos de cada plataforma para realizar os devidos \textit{deploys}. Sendo assim, o \textit{deploy} contínuo estava acontecendo manualmente através do comando:
+Entretanto, não foi possível fazer com que o \textit{deploy} contínuo acontecesse logo após a integração contínua, um desafio causado por escolher desenvolvimento híbridos de aplicativo. Uma vez que o código versionado do aplicativo é o mesmo código para a plataforma Android e iOS, e após realizar a \textit{build} desse código é gerado códigos em cada plataforma, não versionados. A ferramenta de integração contínua não consegue ter acesso aos códigos de cada plataforma para realizar os devidos \textit{deploys}. Sendo assim, o \textit{deploy} contínuo estava acontecendo manualmente através do comando:
 
 \begin{lstlisting}[language=bash]
   $ fastlane beta
@@ -45,8 +45,8 @@ A Figura \ref{img:integracao_deploy_continuo_atual} ilustra como estava funciona
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{figuras/ci_currently.png}
-    \caption[Integração e \textit{deploy} contínuo atual]{Integração e \textit{deploy} contínuo atual. Fonte: autores}
+    \caption[Integração e \textit{deploy} contínuo atual]{Integração e \textit{deploy} contínuo até a primeira entrega. Fonte: autores}
     \label{img:integracao_deploy_continuo_atual}
 \end{figure}
 
-Na segunda parte do trabalho foi estudada formas de melhorar essa automatização, porém com o lançamento da versão 3 do Ionic, muitas dependências pararam de funcionar e a automatização que era para economizar tempo, rodando os testes e integrando as novas funcionalidades ao aplicativo assim como a realização do \textit{deploy} nas lojas, começou a ocasionar perda de tempo de desenvolvimento na tentativa de integrar ferramentas que o Ionic não dá suporte algum. Por isso foi decidido tirar a integração contínua do projeto e realizar essas tarefas manualmente, deixando assim essa melhoria como proposta para trabalhos futuros.
+Na segunda parte do trabalho foi estudada formas de melhorar essa automatização, porém com o lançamento da versão 3 do Ionic, muitas dependências pararam de funcionar e a automatização que era para economizar tempo, rodando os testes e integrando as novas funcionalidades ao aplicativo assim como a realização do \textit{deploy} nas lojas, começou a ocasionar perda de tempo de desenvolvimento na tentativa de integrar ferramentas que o Ionic não dá suporte algum. Por isso foi decidido tirar a integração e entrega contínua do aplicativo e realizar essas tarefas manualmente, deixando assim essa melhoria como proposta para trabalhos futuros.
