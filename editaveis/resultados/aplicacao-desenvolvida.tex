@@ -54,7 +54,7 @@ Além desses requisitos, foram elicitados os seguintes novos itens que se mostra
     \item Eu, como desenvolvedor, gostaria de criar um algoritmo para definir quais serão os postos boicotados.
 \end{itemize}
 
-As funcionalidades de administrador se mostraram imprescindíveis para facilitar a identificação dos postos de combustíveis pelo usuário através de ícones nos postos de gasolina indicando as bandeiras dos postos. Outra necessidade observada durante o segundo período do projeto foram algumas informações fornecidas pela API do Google possuíam erros. Com o módulo de administração, é possível corrigir esses erros pontuais. Além disso, como a primeira versão do aplicativo que vai para a Play Store não irá possuir as funcionalidades que irão garantir a qualidade dos dados de preços dos combustíveis, mostrou-se importante ser possível editar os dados de sugestões de preço manualmente de forma mais prática. A Figura \ref{img:admin-1} mostra a página inicial do módulo de administração.
+As funcionalidades de administrador se mostraram imprescindíveis para facilitar a identificação dos postos de combustíveis pelo usuário através de ícones, indicando as bandeiras. Outra necessidade observada durante o segundo período do projeto foram que algumas informações fornecidas pela API do Google possuíam erros. Com o módulo de administração, é possível corrigir esses erros pontuais. Além disso, como a primeira versão do aplicativo que vai para a Play Store não irá possuir as funcionalidades que irão garantir a qualidade dos dados de preços dos combustíveis, mostrou-se importante ser possível editar os dados de sugestões de preço manualmente de forma mais prática. A Figura \ref{img:admin-1} mostra a página inicial do módulo de administração.
 
 \begin{figure}[H]
     \centering
@@ -79,7 +79,7 @@ Viu-se também a importância de manter um controle na aplicação no que tange 
     \label{img:grafico-app}
 \end{figure}
 
-Com as funcionalidades implementadas a comunicação dos sistemas desenvolvidos se da pela Figura \ref{img:comunicacaosistemas}:
+Com as funcionalidades implementadas a comunicação dos sistemas desenvolvidos se dá pela Figura \ref{img:comunicacaosistemas}:
 
 \begin{figure}[H]
     \centering
@@ -93,7 +93,7 @@ Os dados armazenados em um banco de dados PostgreSQL são transacionados pela in
 No Apêndice \ref{chap:telas} encontram-se algumas telas da aplicação desenvolvida.
 
 \subsection{Método de decisão de postos boicotados}
-Toda semana, em uma \textit{rake task} no Heroku \textit{Scheduler}, serão selecionados postos onde os usuários serão incentivados a não abastecer. Para decidir quais postos serão boicotados, o Guimifiu tem duas estratégias principais: a \textbf{Lista Comum} e o \textbf{Boicote por Bandeiras}. A lista comum escolhe os postos que tenham uma qualidade geral menor que 1 e que não tenham sido boicotados recentemente e cria uma lista inicial. A qualidade geral de um posto é determinada pela fórmula a seguir onde são considerados o número de estrelas do posto e o preço dos combustíveis:
+Toda semana, vão ser selecionados postos onde os usuários serão incentivados a não abastecer. Para decidir quais postos serão boicotados, o Guimifiu tem duas estratégias principais: a \textbf{Lista Comum} e o \textbf{Boicote por Bandeiras}. A lista comum escolhe os postos que tenham uma qualidade geral menor que 1 e que não tenham sido boicotados recentemente criando uma lista inicial. A qualidade geral de um posto é determinada pela fórmula a seguir onde são considerados o número de estrelas do posto e o preço dos combustíveis:
 
 \begin{equation}
 \label{Equação para cálculo de qualidade geral do Combustível}
@@ -119,7 +119,7 @@ Sendo que QG é a Qualidade Geral do posto, PG, PA e PD são os preços de Gasol
 
 Na tabela \ref{tab:exemplo}, os postos 1, 4 e 5 seriam os postos colocados inicialmente na lista inicial por causa do seu QG baixo. O posto 2 e 3 estariam logo acima do limite mínimo e por isso estariam de fora da lista.
 
-A lista inicial é montada e depois é verificado se não existem muitos postos perto demais sendo boicotados para não deixar o usuário com poucas opções de locais para abastecimento. Essa verificação é feita através de grafos. Os nós dos grafos são os postos de combustíveis e as arestas são as distâncias entre os todos postos que não sejam maiores que 10 quilômetros. Com este grafo, em cada nó da lista inicial é verificado se os nós adjacentes são todos postos que estão na lista inicial. Em caso positivo, o nó é removido da lista, caso contrário o nó é mantido. Os nós restantes compõem a lista final de postos boicotados, denominada \textbf{Lista Comum}. Na Figura \ref{img:listainicial}, considerando que os pontos vermelhos são nós da lista inicial e os pontos azuis são o resto dos postos, após a verificação, os pontos vermelhos virariam azuis como na Figura \ref{img:listacomum}.
+A lista inicial é montada e depois é verificado se não existem muitos postos próximos sendo boicotados para não deixar o usuário com poucas opções de locais de abastecimento. Essa verificação é feita através de grafos. Os nós dos grafos são os postos de combustíveis e as arestas são as distâncias entre os todos postos que não sejam maiores que 10 quilômetros. Com este grafo, em cada nó da lista inicial é verificado se os nós adjacentes são todos postos que estão na lista inicial. Em caso positivo, o nó é removido da lista, caso contrário o nó é mantido. Os nós restantes compõem a lista final de postos boicotados, denominada \textbf{Lista Comum}. Na Figura \ref{img:listainicial}, considerando que os pontos vermelhos são nós da lista inicial e os pontos azuis são o resto dos postos, após a verificação, os pontos vermelhos virariam azuis como na Figura \ref{img:listacomum}.
 
 \begin{figure}[H]
     \centering
@@ -136,7 +136,9 @@ A lista inicial é montada e depois é verificado se não existem muitos postos 
 \end{figure}
 \pagebreak
 
-O \textbf{Boicote por Bandeiras} escolhe uma bandeira e todos os postos dessa bandeira são colocados na lista de boicotados, independentemente da distância entre eles, colocando o prejuízo do boicote menos nos postos e mais na bandeira. Os dois tipos de boicote são exclusivos, ou seja, os dois não ocorrem no mesmo período. A estratégia de boicote é escolhida pela equipe de desenvolvimento. O \textbf{Boicote por Bandeiras} é iniciado manualmente no módulo de administração, como mostra a Figura \ref{img:admin-2}
+Baseado no algoritmo foi desenvolvido um script na linguagem Ruby que é executado semanalmente no servidor hospedado no Heroku, através do \textit{Heroku Scheduler}, uma ferramenta criada para executar tarefas no servidor.
+
+O \textbf{Boicote por Bandeiras} É quando todos os postos de uma bandeira previamente selecionada são colocados na lista de boicotados, independente da distância entre eles, colocando o prejuízo do boicote menos nos postos e mais na bandeira. Os dois tipos de boicote são exclusivos, ou seja, os dois não ocorrem no mesmo período. A estratégia de boicote é escolhida pela equipe de desenvolvimento. O \textbf{Boicote por Bandeiras} é iniciado manualmente no módulo de administração, como mostra a Figura \ref{img:admin-2}
 
 \begin{figure}[H]
     \centering
@@ -145,14 +147,11 @@ O \textbf{Boicote por Bandeiras} escolhe uma bandeira e todos os postos dessa ba
     \label{img:admin-2}
 \end{figure}
 
-Baseado no algoritmo foi desenvolvido um \textit{script} na linguagem Ruby que é executado semanalmente no servidor hospedado no Heroku, através do Heroku Scheduler.
-
-
 \subsection{Testes Automatizados}
 
 Foram feitos testes de integração e unitários para garantir o funcionamento dos métodos do código fonte e da integração da aplicação \textit{mobile} com a API.
 
-Foi encontrada uma certa dificuldade pra realizar os testes unitários no Ionic, uma vez que não há muitos exemplos que de fato funcionam e uma documentação do próprio \textit{framework} sobre o assunto.
+Encontrou-se uma certa dificuldade pra realizar os testes unitários no Ionic, uma vez que não há muitos exemplos que de fato funcionam e uma documentação do próprio \textit{framework} sobre o assunto.
 
 O código de testes pode ser encontrado no repositório da aplicação no GitHub (https://github.com/Guimifiu/guimifiu-app). Um exemplo de teste unitário e um de teste de integração está disponível no Apêndice \ref{chap:testes}.
 
@@ -160,7 +159,7 @@ O código de testes pode ser encontrado no repositório da aplicação no GitHub
 
 Como citado no \autoref{chap:met}, foram utilizadas as ferramentas CodeClimate e Rubocop. Além de medir a complexidade no Rubocop, foi feita na integração contínua um relatório de métricas pela ferramenta que impede que a \textit{build} passe caso a complexidade seja maior do que 6, que é o padrão de complexidade ciclomática máxima aceitável.
 
-A Figura \ref{img:rubocop} mostra o resultado da análise feita pelo Rubocop. O arquivo de configuração utilizado para a análise pode ser encontrado no endereço do Github do  \citeonline{rubocop-guimifiu}.
+A Figura \ref{img:rubocop} mostra o resultado da análise feita pelo Rubocop. O arquivo de configuração utilizado para a análise pode ser encontrado no endereço do GitHub do  \citeonline{rubocop-guimifiu}.
 
 \begin{figure}[H]
     \centering
@@ -178,7 +177,7 @@ A Figura \ref{img:codeclimate} mostra o resultado das análises realizado pelo \
     \label{img:codeclimate}
 \end{figure}
 
-As \textit{issues} encontradas no CodeClimate infelizmente não puderam ser tratadas a tempo da entrega do projeto devido aos problemas encontrados durante o desenvolvimento, como descritos no Capítulo \ref{chap:crono}
+As \textit{issues} encontradas no CodeClimate infelizmente não puderam ser tratadas a tempo da entrega do projeto devido aos problemas encontrados durante o desenvolvimento, como descritos no Capítulo \ref{chap:crono}.
 
 
 \subsection{Integração e Entrega Contínua}
