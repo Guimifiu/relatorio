@@ -2,6 +2,14 @@
 
 \subsection{Representação da Arquitetura}
 
+O aplicativo é dividido em certo certos pacotes: 
+
+\begin{itemize}
+\item\textbf{\textit{app}}: onde o \textit{framework} inicia o aplicativo; !!!!!!EXPLICAR MELHOR!!!!!!
+\item\textbf{\textit{pages}}: onde são colocadas as páginas do aplicativo, como o login, a página de registro de contas, entre outras. Cada página é composta de HTML e CSS, que compõem o visual da página e o Typescript que é onde está a parte lógica da página; 
+\item\textbf{\textit{providers}}: onde ficam os métodos que fazem a comunicação da API com o aplicativo.
+\end{itemize}
+
 A forma como está sendo utilizado o \textit{framework} Ionic pode ser representado com diagrama de pacotes representado na Figura \ref{img:pacotes}:
 
 \begin{figure}[H]
