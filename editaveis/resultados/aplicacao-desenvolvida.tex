@@ -1,18 +1,29 @@
 \section{Aplicação Desenvolvida}
-Para a segunda entrega do aplicativo, foram desenvolvidos os seguintes requisitos já elicitados na primeira entrega:
-\begin{itemize}
-    \item Eu, como motorista, gostaria de me cadastrar no sistema para ter acesso ao mesmo;
-    \item Eu, como motorista, gostaria de me autenticar no sistema para utilizar as funcionalidades do mesmo;
-    \item Eu, como motorista, gostaria de ver os postos dentro de uma rota para facilitar a minha escolha de posto;
-    \item Eu, como motorista, desejo abrir a rota de um posto de combustível com outros softwares de navegação para conseguir chegar à ele;
-    \item Eu, como motorista, gostaria de avaliar o posto onde eu abasteci para atribuir uma qualidade ao mesmo;
-    \item Eu, como motorista, gostaria de ver as informações do posto onde eu estou, para saber se quero abastecer nele ou não.
-    \item Eu, como motorista, gostaria de informar se estou ou não abastecendo no posto para contribuir com os dados coletados pelo aplicativo;
-    \item Eu, como motorista, gostaria de registrar o preço de combustíveis, álcool ou diesel do posto onde eu me encontro para ele sempre estar com o preço correto;
-    \item Eu, como motorista, gostaria de saber quando eu estou em um posto de combustíveis para interagir com o mesmo;
-    \item Eu, como motorista, gostaria de editar o meu cadastro para manter minhas informações atualizadas;
-    \item Eu, como desenvolvedor, desejo mapear os postos de combustíveis para que sejam tratados no sistema;
-\end{itemize}
+Para a segunda entrega do aplicativo, foram desenvolvidos os requisitos já elicitados na primeira entrega conforme mostra a Tabela \ref{tab:req}
+
+\begin{table}[H]
+\centering
+\caption{Status dos Requisitos elicitados na primeira entrega}
+\label{tab:req}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{História} & \textbf{Desenvolvida?} \\ \hline
+1                 & Sim                    \\ \hline
+2                 & Sim                    \\ \hline
+3                 & Sim                    \\ \hline
+4                 & Não                    \\ \hline
+5                 & Sim                    \\ \hline
+6                 & Sim                    \\ \hline
+7                 & Não                    \\ \hline
+8                 & Não                    \\ \hline
+9                 & Sim                    \\ \hline
+10                & Sim                    \\ \hline
+11                & Sim                    \\ \hline
+12                & Sim                    \\ \hline
+13                & Sim                    \\ \hline
+14                & Sim                    \\ \hline
+\end{tabular}
+\end{table}
 
 A Figura \ref{img:tela_de_login} mostra a tela de login da aplicação. O login pode ser feito via Facebook, Google ou criando uma conta local.
 
@@ -42,17 +53,24 @@ A Figura \ref{img:chegou-posto-boicotado} mostra uma tela da aplicação assim q
     \label{img:chegou-posto-boicotado}
 \end{figure}
 
-Além desses requisitos, foram elicitados os seguintes novos itens que se mostraram imprescindíveis para a aplicação:
+Além desses requisitos, foram elicitados as novas histórias que se mostraram imprescindíveis para a aplicação. O status dos requisitos se encontram na Tabela \ref{tab:req-2}
 
-\begin{itemize}
-    \item Eu, como administrador, gostaria de me autenticar no sistema para ajustar configurações básicas do mesmo;
-    \item Eu, como administrador, gostaria de adicionar as bandeiras dos postos para facilitar a identificação pelo usuário;
-    \item Eu, como administrador, gostaria de alterar as informações dos postos cadastrados para garantir a verossimilhança dos dados vindos de fontes externas ao sistema;
-    \item Eu, como administrador, gostaria de criar boicote por bandeiras para que o boicote seja efetivo diretamente à uma bandeira específica.
-    \item Eu, como motorista, gostaria de visualizar um gráfico contendo os gastos mensais com combustível para controlar melhor o meu orçamento;
-    \item Eu, como motorista, gostaria de visualizar um histórico de postos onde passei para controlar melhor os meus gastos;
-    \item Eu, como desenvolvedor, gostaria de criar um algoritmo para definir quais serão os postos boicotados.
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Status dos Requisitos elicitados na segunda entrega}
+\label{tab:req-2}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{História} & \textbf{Desenvolvida?} \\ \hline
+15                & Sim                    \\ \hline
+16                & Sim                    \\ \hline
+17                & Sim                    \\ \hline
+18                & Sim                    \\ \hline
+19                & Sim                    \\ \hline
+20                & Sim                    \\ \hline
+21                & Sim                    \\ \hline
+\end{tabular}
+\end{table}
 
 As funcionalidades de administrador se mostraram imprescindíveis para facilitar a identificação dos postos de combustíveis pelo usuário através de ícones, indicando as bandeiras. Outra necessidade observada durante o segundo período do projeto foram que algumas informações fornecidas pela API do Google possuíam erros. Com o módulo de administração, é possível corrigir esses erros pontuais. Além disso, como a primeira versão do aplicativo que vai para a Play Store não irá possuir as funcionalidades que irão garantir a qualidade dos dados de preços dos combustíveis, mostrou-se importante ser possível editar os dados de sugestões de preço manualmente de forma mais prática. A Figura \ref{img:admin-1} mostra a página inicial do módulo de administração.
 
@@ -78,6 +96,7 @@ Viu-se também a importância de manter um controle na aplicação no que tange 
     \caption[Página inicial do módulo de administração]{Página inicial do módulo de administração. Fonte: autores}
     \label{img:grafico-app}
 \end{figure}
+\pagebreak
 
 Com as funcionalidades implementadas a comunicação dos sistemas desenvolvidos se dá pela Figura \ref{img:comunicacaosistemas}:
 
