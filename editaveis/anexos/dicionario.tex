@@ -27,6 +27,8 @@ A Tabela \ref{dic:rating} mostra o dicionário de dados da entidade \textit{Aval
 \textbf{Atributo} & \textbf{Domínio} & \textbf{Descrição} \\ \hline
 Id                            & Numérico                                                       & Número identificador da avaliação \\ \hline
 Estrelas                           & Numérico                                               & \begin{tabular}[l]{@{}c@{}}Classificação de um posto de gasolina.\\ Pode ir de 0 a 5\end{tabular}\\ \hline
+Usuário Id & Numérico & Chave estrangeira da tabela \textit{Usuario}\\ \hline
+Posto de Combustível Id & Numérico & Chave estrangeira da tabela \textit{PostoDeCombustivel}\\ \hline
 
 \end{tabular}
 \end{table}
@@ -44,6 +46,7 @@ Longitude                       & Texto                                         
 Vizinhanca                        & Texto                                                     & \begin{tabular}[l]{@{}c@{}}Endereço da vizinhança\\ onde o posto se localiza\end{tabular} \\ \hline
 Google Maps Id                  & Númerico                                                       & Chave da API do Google Maps      \\ \hline
 Nome                            & Texto                                                      & Nome do posto de combustível\\ \hline
+Bandeira Id & Numérico & Chave estrangeira da tabela \textit{Bandeira}\\ \hline
 \end{tabular}
 \end{table}
 
@@ -57,6 +60,8 @@ A Tabela \ref{dic:pricesuggestion} mostra o dicionário de dados da entidade \te
 Id                            & Numérico                                                       & Número identificador da sugestão de preço \\ \hline
 Tipo                            & Numérico                                                     & \begin{tabular}[l]{@{}c@{}}Define o tipo de combustível\\(Gasolina, Álcool ou Diesel)\end{tabular}\\ \hline
 Valor                           & Numérico                                                 & Valor do combustível\\ \hline
+Usuário Id & Numérico & Chave estrangeira da tabela \textit{Usuario}\\ \hline
+Posto de Combustível Id & Numérico & Chave estrangeira da tabela \textit{PostoDeCombustivel}\\ \hline
 
 \end{tabular}
 \end{table}
@@ -73,6 +78,8 @@ Data                            & Data                                          
 Abastecido                          & Boleano                                           & \begin{tabular}[l]{@{}c@{}}Define se o usuário abasteceu ou não \\no posto em que parou\end{tabular}\\ \hline
 Boicotado                       & Boleano                                                  & \begin{tabular}[l]{@{}c@{}}Define se o posto em que o usuário parou\\ estava na lista de postos boicotados\end{tabular} \\ \hline
 Valor                           & Numérico                                              & Valor de combustível abastecido\\ \hline
+Usuário Id & Numérico & Chave estrangeira da tabela \textit{Usuario}\\ \hline
+Posto de Combustível Id & Numérico & Chave estrangeira da tabela \textit{PostoDeCombustivel}\\ \hline
 
 \end{tabular}
 \end{table}
@@ -119,6 +126,7 @@ Por fim, a Tabela \ref{dic:flag_boycott} mostra o dicionário de dados da entida
 Id                            & Numérico                                                       & Número identificador do boicote por bandeira \\ \hline
 Data de Início                      & Data                                           & Data de início da lista de boicote \\ \hline
 Data de Término                       & Data                                         & Data final da lista de boicote\\ \hline
+Bandeira Id & Numérico & Chave estrangeira da tabela \textit{Bandeira}\\ \hline
 
 \end{tabular}
 \end{table}
