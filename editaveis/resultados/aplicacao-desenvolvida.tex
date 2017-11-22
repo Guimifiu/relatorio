@@ -35,12 +35,12 @@ A Figura \ref{img:tela_de_login} mostra a tela de login da aplicação. O login 
 \end{figure}
 \pagebreak
 
-Como ilustrado na Figura \ref{img:postos_de_gasolina_proximos}, são mostrados na aplicação todos os postos de combustíveis próximos a localização do usuário em um raio de 5km.
+Como ilustrado na Figura \ref{img:postos_de_gasolina_proximos}, são mostrados na aplicação todos os postos de com- bustíveis em um raio de 5 km da localização do usuário.
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.2]{figuras/app_2.jpg}
-    \caption[Postos de combustíveis próximos]{Postos de combustíveis próximos. Fonte: autores}
+    \caption[Postos de combustíveis próximos]{Postos de combustíveis próximos à localização do usuário. Fonte: autores}
     \label{img:postos_de_gasolina_proximos}
 \end{figure}
 
@@ -72,7 +72,7 @@ Além desses requisitos, foram elicitados as novas histórias que se mostraram i
 \end{tabular}
 \end{table}
 
-As funcionalidades de administrador se mostraram imprescindíveis para facilitar a identificação dos postos de combustíveis pelo usuário através de ícones, indicando as bandeiras. Outra necessidade observada durante o segundo período do projeto foram que algumas informações fornecidas pela API do Google possuíam erros. Com o módulo de administração, é possível corrigir esses erros pontuais. Além disso, como a primeira versão do aplicativo que vai para a Play Store não irá possuir as funcionalidades que irão garantir a qualidade dos dados de preços dos combustíveis, mostrou-se importante ser possível editar os dados de sugestões de preço manualmente de forma mais prática. A Figura \ref{img:admin-1} mostra a página inicial do módulo de administração.
+As funcionalidades de administrador se mostraram imprescindíveis para facilitar a identificação dos postos de combustíveis pelo usuário através de ícones, indicando as bandeiras. Durante o segundo período do projeto, observou-se que algumas informações fornecidas pela API do Google possuíam erros. Com o módulo de administração, é possível corrigir esses erros pontuais. Além disso, como a primeira versão do aplicativo que vai para a Play Store não possuirá as funcionalidades que garantirão a qualidade dos dados de preços dos combustíveis, a possibilidade de editar os dados de sugestão de preço manualmente, de forma mais prática, mostrou-se importante. A Figura \ref{img:admin-1} mostra a página inicial do módulo de administração.
 
 \begin{figure}[H]
     \centering
@@ -81,7 +81,7 @@ As funcionalidades de administrador se mostraram imprescindíveis para facilitar
     \label{img:admin-1}
 \end{figure}
 
-Viu-se também a importância de manter um controle na aplicação no que tange a controle de gastos do motorista e como isso age como um diferencial dos aplicativos atuais. A Figura \ref{img:historico-app} ilustra o histórico de postos abastecidos pelo usuário, enquanto a Figura \ref{img:grafico-app} mostra o gráfico de gastos mensais.
+Observou-se também a importância de manter um controle na aplicação sobre o controle de gastos do motorista e como essa funcionalidade é um diferencial em relação aos aplicativos atuais. A Figura \ref{img:historico-app} ilustra o histórico de postos abastecidos pelo usuário, enquanto a Figura \ref{img:grafico-app} mostra o gráfico de gastos mensais.
 
 \begin{figure}[H]
     \centering
@@ -98,7 +98,7 @@ Viu-se também a importância de manter um controle na aplicação no que tange 
 \end{figure}
 \pagebreak
 
-Com as funcionalidades implementadas a comunicação dos sistemas desenvolvidos se dá pela Figura \ref{img:comunicacaosistemas}:
+Com as funcionalidades implementadas, a comunicação dos sistemas desenvolvidos se dá como ilustrado pela Figura \ref{img:comunicacaosistemas}:
 
 \begin{figure}[H]
     \centering
@@ -107,19 +107,19 @@ Com as funcionalidades implementadas a comunicação dos sistemas desenvolvidos 
     \label{img:comunicacaosistemas}
 \end{figure}
 
-Os dados armazenados em um banco de dados PostgreSQL são transacionados pela interface administradora e pela API. O aplicativo por sua vez se comunica com a API para acessar, criar e alterar os dados.
+Os dados armazenados em um banco de dados PostgreSQL são transacionados pela interface administradora e pela API. Por sua vez, aplicativo se comunica com a API para acessar, criar e alterar os dados.
 
-No Apêndice \ref{chap:telas} encontram-se algumas telas da aplicação desenvolvida.
+O Apêndice \ref{chap:telas} apresenta algumas outras telas da aplicação desenvolvida.
 
 \subsection{Método de decisão de postos boicotados}
-Toda semana, vão ser selecionados postos onde os usuários serão incentivados a não abastecer. Para decidir quais postos serão boicotados, o Guimifiu tem duas estratégias principais: a \textbf{Lista Comum} e o \textbf{Boicote por Bandeiras}. A lista comum escolhe os postos que tenham uma qualidade geral menor que 1 e que não tenham sido boicotados recentemente criando uma lista inicial. A qualidade geral de um posto é determinada pela fórmula a seguir onde são considerados o número de estrelas do posto e o preço dos combustíveis:
+Toda semana, serão selecionados postos onde os usuários serão incentivados a não abastecer. Para decidir quais postos serão boicotados, o Guimifiu tem duas estratégias principais: a \textbf{Lista Comum} e o \textbf{Boicote por Bandeiras}. A lista comum escolhe os postos com qualidade geral menor que 1 e que não tenham sido boicotados recentemente, criando uma lista inicial. A qualidade geral de um posto é determinada pela fórmula a seguir, onde são considerados o número de estrelas do posto e o preço dos combustíveis:
 
 \begin{equation}
 \label{Equação para cálculo de qualidade geral do Combustível}
 	QG = \frac{5*QE}{2*(PG + PA + PD)}
 \end{equation}
 
-Sendo que QG é a Qualidade Geral do posto, PG, PA e PD são os preços de Gasolina, Álcool e Diesel, respectivamente e, por fim, QE é a Quantidade de Estrelas. A quantidade de estrelas é definida pela média das avaliações dos usuários. O objetivo é que a qualidade do posto indicado pelos usuários seja proporcional a qualidade geral dele e que os preços dos combustíveis sejam inversamente proporcionais, ou seja, quanto maior a quantidade de estrelas e menor o preço dos combustíveis, maior a qualidade geral do posto, diminuindo as chances do mesmo ser boicotado. Essa fórmula será balanceada de acordo com os dados dos postos e das avaliações dos usuários com o tempo. A tabela \ref{tab:exemplo} contém um exemplo de postos fictícios com preços, quantidade de estrelas e a qualidade geral para exemplificar.
+Sendo que QG é a Qualidade Geral do posto, PG, PA e PD são os preços de Gasolina, Álcool e Diesel, respectivamente e, por fim, QE é a Quantidade de Estrelas. A quantidade de estrelas é definida pela média das avaliações dos usuários. O objetivo é que a qualidade do posto indicado pelos usuários seja proporcional à qualidade geral dele e que os preços dos combustíveis sejam inversamente proporcionais, ou seja, quanto maior a quantidade de estrelas e menor o preço dos combustíveis, maior a qualidade geral do posto, diminuindo suas chances do mesmo ser boicotado. Essa fórmula será balanceada de acordo com os dados dos postos e das avaliações dos usuários com o tempo. A tabela \ref{tab:exemplo} contém um exemplo de postos fictícios com preços, quantidade de estrelas e a qualidade geral.
 
 \begin{table}[H]
 \centering
@@ -136,9 +136,9 @@ Sendo que QG é a Qualidade Geral do posto, PG, PA e PD são os preços de Gasol
 \end{tabular}
 \end{table}
 
-Na tabela \ref{tab:exemplo}, os postos 1, 4 e 5 seriam os postos colocados inicialmente na lista inicial por causa do seu QG baixo. O posto 2 e 3 estariam logo acima do limite mínimo e por isso estariam de fora da lista.
+Na tabela \ref{tab:exemplo}, os postos 1, 4 e 5 seriam os colocados na lista inicial, devido ao baixo QG. Os postos 2 e 3 estariam logo acima do limite mínimo e, portanto, estariam de fora da lista.
 
-A lista inicial é montada e depois é verificado se não existem muitos postos próximos sendo boicotados para não deixar o usuário com poucas opções de locais de abastecimento. Essa verificação é feita através de grafos. Os nós dos grafos são os postos de combustíveis e as arestas são as distâncias entre os todos postos que não sejam maiores que 10 quilômetros. Com este grafo, em cada nó da lista inicial é verificado se os nós adjacentes são todos postos que estão na lista inicial. Em caso positivo, o nó é removido da lista, caso contrário o nó é mantido. Os nós restantes compõem a lista final de postos boicotados, denominada \textbf{Lista Comum}. Na Figura \ref{img:listainicial}, considerando que os pontos vermelhos são nós da lista inicial e os pontos azuis são o resto dos postos, após a verificação, os pontos vermelhos virariam azuis como na Figura \ref{img:listacomum}.
+A lista inicial é montada e então a aplicação verifica se não existem muitos postos próximos sendo boicotados, para não deixar o usuário com poucas opções de locais de abastecimento. Essa verificação é feita através de grafos. Os nós dos grafos são os postos de combustíveis e as arestas são as distâncias entre os todos postos que não sejam maiores que 10 quilômetros. Com este grafo, em cada nó da lista inicial é verificado se os nós adjacentes são todos postos que estão na lista inicial. Em caso positivo, o nó é removido da lista; caso contrário, o nó é mantido. Os nós restantes compõem a lista final de postos boicotados, denominada \textbf{Lista Comum}. Na Figura \ref{img:listainicial}, considerando que os pontos vermelhos são nós da lista inicial e os pontos azuis são os demais postos, após a verificação, os pontos vermelhos virariam azuis, como mostrado na Figura \ref{img:listacomum}.
 
 \begin{figure}[H]
     \centering
@@ -153,11 +153,10 @@ A lista inicial é montada e depois é verificado se não existem muitos postos 
     \caption[Grafo com Lista Comum de Postos Boicotados]{Grafo com Lista Comum de Postos Boicotados. Fonte: autores}
     \label{img:listacomum}
 \end{figure}
-\pagebreak
 
-Baseado no algoritmo foi desenvolvido um script na linguagem Ruby que é executado semanalmente no servidor hospedado no Heroku, através do \textit{Heroku Scheduler}, uma ferramenta criada para executar tarefas no servidor.
+Baseado no algoritmo, foi desenvolvido um script na linguagem Ruby que é executado semanalmente no servidor hospedado no Heroku, através do \textit{Heroku Scheduler}, uma ferramenta criada para executar tarefas no servidor.
 
-O \textbf{Boicote por Bandeiras} É quando todos os postos de uma bandeira previamente selecionada são colocados na lista de boicotados, independente da distância entre eles, colocando o prejuízo do boicote menos nos postos e mais na bandeira. Os dois tipos de boicote são exclusivos, ou seja, os dois não ocorrem no mesmo período. A estratégia de boicote é escolhida pela equipe de desenvolvimento. O \textbf{Boicote por Bandeiras} é iniciado manualmente no módulo de administração, como mostra a Figura \ref{img:admin-2}
+O \textbf{Boicote por Bandeiras} acontece quando todos os postos de uma bandeira previamente selecionada são colocados na lista de boicotados, independentemente da distância entre eles, colocando o prejuízo do boicote menos nos postos e mais na bandeira. Os dois tipos de boicote são exclusivos, ou seja, não ocorrem no mesmo período. A estratégia de boicote é escolhida pela equipe de desenvolvimento. O \textbf{Boicote por Bandeiras} é iniciado manualmente no módulo de administração, como mostra a Figura \ref{img:admin-2}
 
 \begin{figure}[H]
     \centering
@@ -168,13 +167,13 @@ O \textbf{Boicote por Bandeiras} É quando todos os postos de uma bandeira previ
 
 \subsection{Testes Automatizados}
 
-Foram feitos testes de integração e unitários para garantir o funcionamento dos métodos do código fonte e da integração da aplicação \textit{mobile} com a API.
+Foram feitos testes de integração e unitários para garantir o funcionamento dos métodos do código-fonte e da integração da aplicação \textit{mobile} com a API.
 
 Encontrou-se uma certa dificuldade pra realizar os testes unitários no Ionic, uma vez que não há muitos exemplos que de fato funcionam e uma documentação do próprio \textit{framework} sobre o assunto.
 
-O código de testes pode ser encontrado no repositório da aplicação no GitHub (https://github.com/Guimifiu/guimifiu-app). Um exemplo de teste unitário e um de teste de integração está disponível no Apêndice \ref{chap:testes}.
+O código de testes pode ser encontrado no repositório da aplicação no GitHub (https://github.com/Guimifiu/guimifiu-app). Um exemplo de teste unitário e de teste de integração está disponível no Apêndice \ref{chap:testes}.
 
-\subsection{Métricas de Código fonte}
+\subsection{Métricas de Código-fonte}
 
 Como citado no \autoref{chap:met}, foram utilizadas as ferramentas CodeClimate e Rubocop. Além de medir a complexidade no Rubocop, foi feita na integração contínua um relatório de métricas pela ferramenta que impede que a \textit{build} passe caso a complexidade seja maior do que 6, que é o padrão de complexidade ciclomática máxima aceitável.
 
